@@ -68,6 +68,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `ville` varchar(50) NOT NULL,
   `cp` int(5) NOT NULL,
   `admin` tinyint(1) NOT NULL DEFAULT '0',
+  `password` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
