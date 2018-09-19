@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `pseudo` varchar(50) NOT NULL,
   `nom` varchar(50) NOT NULL,
   `prenom` varchar(50) NOT NULL,
-  `email` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL UNIQUE,
   `adresse` varchar(50) NOT NULL,
   `ville` varchar(50) NOT NULL,
   `cp` int(5) NOT NULL,
