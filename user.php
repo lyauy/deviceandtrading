@@ -2,6 +2,7 @@
 include_once('ConnexionBDD.php');
 
 class User {
+	
 	var $pseudo;
 	var $nom;
 	var $prenom;
@@ -23,7 +24,18 @@ class User {
 		$this->admin = $Padmin;
 		$this->password = $Ppassword;	
 	}
+<<<<<<< HEAD
 	public function userToDB($conn)
+=======
+
+	public function redirectUser()
+	{
+	
+	  echo var_dump($this);
+	}
+
+	public function createUser($conn)
+>>>>>>> b879981ae43be79988df90f37c5a2a902c270b3c
 	{
 		$req = $conn->exec("INSERT INTO user(pseudo, nom, prenom, email, adresse, ville, cp, admin, password) 
 			VALUES('$this->pseudo', '$this->nom', '$this->prenom', '$this->email', '$this->adresse', '$this->ville', '$this->cp', '$this->admin', '$this->password')");

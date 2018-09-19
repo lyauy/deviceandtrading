@@ -13,6 +13,7 @@
 
 
 -- Export de la structure de la base pour location
+DROP TABLE 'location'
 CREATE DATABASE IF NOT EXISTS `location` /*!40100 DEFAULT CHARACTER SET latin1 */;
 USE `location`;
 
