@@ -3,6 +3,7 @@ include_once('ConnexionBDD.php');
 
 class User {
 	
+	var $id;
 	var $pseudo;
 	var $nom;
 	var $prenom;
@@ -26,10 +27,11 @@ class User {
 		$this->password = $Ppassword;	
 	}
 
-	public function redirectUser()
+	public function redirectUser($user)
 	{
-	
-	  echo var_dump($this);
+
+		header("Location: ./show_user_list.php");
+		die();
 	}
 
 	public function createUser($conn)
