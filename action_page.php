@@ -5,22 +5,24 @@ session_start();
 
 $email = $_POST["email"];
 
-$user = $conn->query("SELECT * FROM user WHERE email = '$email'");
+$sth = $conn->query("SELECT * FROM user WHERE email = '$email'");
+$sth->setFetchMode(PDO::FETCH_CLASS, 'User');
+$user = $sth->fetch();
 
-echo gettype($user);
-echo get_class($user);
-echo"<br/>";
-castToUser($user);
-if($user->rowCount()>0)
+if($user)
 {
-  echo "Connecté";
-  $_SESSION['fdp'] = $email;
-  echo $_SESSION['fdp'];
+  echo "Vous êtes connecté(e) ! ";
+  $_SESSION['fdp'] = $user;
+  var_dump($_SESSION['fdp']);
 }
 else
   echo "Non connecté";
 
-
+/*  echo "<br/>";
+echo gettype($user);
+echo "<br />";
+echo get_class($user);
+echo"<br/>";*/
 /*var_dump($users);
 if (isset($_POST["email"]) ==) {
   echo $_POST["email"];
