@@ -63,17 +63,17 @@
 
 <div id="id01" class="modal">
   
-  <form class="modal-content animate" action="/action_page.php">
+  <form class="modal-content animate" action="./action_page.php" method="post">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
     </div>
 
     <div class="container">
       <label for="uname"><b>Adresse E-mail</b></label>
-      <input type="text" placeholder="Entrez votre adresse Email" name="uname" required>
+      <input type="text" placeholder="Entrez votre adresse Email" name="email" required>
 
       <label for="psw"><b>Mot de passe</b></label>
-      <input type="password" placeholder="Entrez votre mot de passe" name="psw" required>
+      <input type="password" placeholder="Entrez votre mot de passe" name="mdp" required>
         
       <button class="button" type="submit">Se connecter</button>
       <label>
@@ -83,7 +83,7 @@
 
     <div class="container" style="background-color:#f1f1f1">
       <button type="button" onclick="document.getElementById('id01').style.display='none'" class="button cancelbtn">Cancel</button>
-      <span class="psw"><a href="#">Mot de passe oublié ?</a></span>
+      <span class="psw"><a href="#">S'inscrire</a> / <a href="#">Mot de passe oublié ?</a></span>
     </div>
   </form>
 </div>

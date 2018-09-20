@@ -1,12 +1,46 @@
 <?php
-include("user.php");
-$test = new User('t', 't', 't', 't', 't', 't', 52525, 0, '52522')
+include("userController.php");
+
+session_start();
+
+$email = $_POST["email"];
+
+$user = $conn->query("SELECT * FROM user WHERE email = '$email'");
+
+echo gettype($user);
+echo get_class($user);
+echo"<br/>";
+castToUser($user);
+if($user->rowCount()>0)
+{
+  echo "Connecté";
+  $_SESSION['fdp'] = $email;
+  echo $_SESSION['fdp'];
+}
+else
+  echo "Non connecté";
+
+
+/*var_dump($users);
+if (isset($_POST["email"]) ==) {
+  echo $_POST["email"];
+}
+foreach ($users as $user) {
+  var_dump($user);
+  echo gettype($user);
+  echo $user[0];
+
+  if (isset($_POST["email"] && $_POST["email"] == ) {
+  }
+}*/
+
+/*$test = new User('t', 't', 't', 't', 't', 't', 52525, 0, '52522')
 ;
 echo var_dump($test);
 /*var_dump($conn);*/
-$test->userToDB($conn);
+/*$test->userToDB($conn);
 
-$test->deleteUser($conn);
+$test->deleteUser($conn);*/
 /*echo $test->pseudo;
 
 $serializedTest = serialize($test);

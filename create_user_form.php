@@ -22,10 +22,10 @@
     <br><br>
     Ville:<br>
     <input type="text" name="ville" value="">
-    <br>
+    <br><br>
     Code postal:<br>
     <input type="text" name="cp" value="">
-    <br><br>
+    <br>
     Mot de passe:<br>
     <input type="text" name="password" value="">
     <br><br>
