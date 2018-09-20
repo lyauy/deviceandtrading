@@ -20,12 +20,12 @@
     Adresse:<br>
     <input type="text" name="adresse" value="">
     <br><br>
-    Code postal:<br>
-    <input type="text" name="ville" value="">
-    <br>
     Ville:<br>
-    <input type="text" name="cp" value="">
+    <input type="text" name="ville" value="">
     <br><br>
+    Code postal:<br>
+    <input type="text" name="cp" value="">
+    <br>
     Mot de passe:<br>
     <input type="text" name="password" value="">
     <br><br>
