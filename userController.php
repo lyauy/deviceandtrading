@@ -1,11 +1,23 @@
 <?php
-include('user.php');
 
-/*$test = new User();
-var_dump($test);*/
+include_once('ConnexionBDD.php');
+include_once('user.php');
+
+
+
 
 /*var_dump($user);*/
 
+function getUser ($sth) {
+
+	$sth->setFetchMode(PDO::FETCH_CLASS, 'User');
+	$user = $sth->fetch();
+	return $user;
+}
+
+
+/*$test = new User();
+var_dump($test);*/
 /*castToUser($test);
 
 function castToUser ($user)
@@ -25,3 +37,4 @@ function castToUser ($user)
 }*/
 
 ?>
+

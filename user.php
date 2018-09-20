@@ -29,6 +29,7 @@ class User {
 	}
 
 	function __construct2($Ppseudo, $Pnom, $Pprenom, $Pemail, $Padresse, $Pville, $Pcp, $Padmin, $Ppassword) {
+
 		$this->pseudo = $Ppseudo;
 		$this->nom = $Pnom;
 		$this->prenom = $Pprenom;
@@ -40,21 +41,24 @@ class User {
 		$this->password = $Ppassword;	
 	}
 
+
 	public function userToDB($conn)
 	{
 		$req = $conn->exec("INSERT INTO user(pseudo, nom, prenom, email, adresse, ville, cp, admin, password) 
 			VALUES('$this->pseudo', '$this->nom', '$this->prenom', '$this->email', '$this->adresse', '$this->ville', '$this->cp', '$this->admin', '$this->password')");
 	}
 
-	public function redirectUser()
+	public function redirectUser($user)
 	{
-	  echo var_dump($this);
+		header("Location: ./show_user_list.php");
+		die();
 	}
 
 	public function SaveToDB($conn)
 	{
 		$req = $conn->exec("UPDATE user SET pseudo = '$this->pseudo', nom = '$this->nom', prenom = '$this->prenom', email = '$this->email', adresse = '$this->adresse', ville = '$this->ville', cp = '$this->cp', admin = '$this->admin', password = '$this->password')");
 	}
+
 	public function deleteUser($conn) 
 	{
 		echo $this->email;
