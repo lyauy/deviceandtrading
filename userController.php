@@ -3,7 +3,8 @@
 include_once('ConnexionBDD.php');
 include_once('user.php');
 
-
+$test = new User('t', 't', 't', 't', 't', 't', 95242, 0, 'rvge');
+var_dump($test);
 
 
 /*var_dump($user);*/

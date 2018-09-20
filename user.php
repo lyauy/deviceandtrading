@@ -15,14 +15,12 @@ class User {
 
 	function __construct() {
         $argv = func_get_args();
-        switch( func_num_args() ) {
-            case 1:
-                self::__construct1();
-                break;
-            case 2:
-                self::__construct2( $argv[0], $argv[1], $argv[2], $argv[3], $argv[4], $argv[5], $argv[6], $argv[7], $argv[8] );
-                break;
+        var_dump($argv);
+         if (func_num_args() == 9) {
+         	self::__construct2( $argv[0], $argv[1], $argv[2], $argv[3], $argv[4], $argv[5], $argv[6], $argv[7], $argv[8] );
          }
+         else
+         	self::__construct1();
     }
 
     function __construct1() {	
@@ -54,7 +52,7 @@ class User {
 		die();
 	}
 
-	public function SaveToDB($conn)
+	public function saveToDB($conn)
 	{
 		$req = $conn->exec("UPDATE user SET pseudo = '$this->pseudo', nom = '$this->nom', prenom = '$this->prenom', email = '$this->email', adresse = '$this->adresse', ville = '$this->ville', cp = '$this->cp', admin = '$this->admin', password = '$this->password')");
 	}
