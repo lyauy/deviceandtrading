@@ -4,6 +4,12 @@ include_once('ConnexionBDD.php');
 include_once('user.php');
 
 
+function redirectUser()
+{
+	header("Location: ./show_user_list.php");
+	die();
+}
+
 function getUser ($sth) {
 
 	$sth->setFetchMode(PDO::FETCH_CLASS, 'User');
@@ -11,25 +17,20 @@ function getUser ($sth) {
 	return $user;
 }
 
-/*$test = new User();
-var_dump($test);*/
-/*castToUser($test);
+function createUser($conn) {
 
-function castToUser ($user)
-{
-	if(is_object($user) && !$user instanceof User)
-	{
-		echo ("Objet");
-		foreach ($user as $userP)
-		{
-		    
-		}
-	}
-	else
-	{
-		echo ("Non objet");
-	}
-}*/
+	$newUser = new User($_POST['pseudo'], $_POST['nom'], $_POST['prenom'], $_POST['email'], $_POST['adresse'], $_POST['ville'], $_POST['cp'], 0, $_POST['password']);
+	$newUser->userToDB($conn);
+	redirectUser();
+}
+
+function editUser($conn) {
+
+	$newUser = new User($_POST['pseudo'], $_POST['nom'], $_POST['prenom'], $_POST['email'], $_POST['adresse'], $_POST['ville'], $_POST['cp'], 0, $_POST['password']);
+	$newUser->saveToDB($conn);
+	header("Location: ./show_user.php?pseudo=". $_POST['pseudo']);
+	die();
+}
 
 ?>
 

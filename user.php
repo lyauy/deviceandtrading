@@ -14,15 +14,16 @@ class User {
 	var $password;
 
 	function __construct() {
+
         $argv = func_get_args();
-        switch( func_num_args() ) {
-            case 1:
-                self::__construct1();
-                break;
-            case 2:
-                self::__construct2( $argv[0], $argv[1], $argv[2], $argv[3], $argv[4], $argv[5], $argv[6], $argv[7], $argv[8] );
-                break;
-         }
+        if (func_num_args() == 9) 
+        {
+        	self::__construct2( $argv[0], $argv[1], $argv[2], $argv[3], $argv[4], $argv[5], $argv[6], $argv[7], $argv[8] );
+        }
+        else
+        {
+        	self::__construct1();
+        }
     }
 
     function __construct1() {	
@@ -48,15 +49,9 @@ class User {
 			VALUES('$this->pseudo', '$this->nom', '$this->prenom', '$this->email', '$this->adresse', '$this->ville', '$this->cp', '$this->admin', '$this->password')");
 	}
 
-	public function redirectUser($user)
+	public function saveToDB($conn)
 	{
-		header("Location: ./show_user_list.php");
-		die();
-	}
-
-	public function SaveToDB($conn)
-	{
-		$req = $conn->exec("UPDATE user SET pseudo = '$this->pseudo', nom = '$this->nom', prenom = '$this->prenom', email = '$this->email', adresse = '$this->adresse', ville = '$this->ville', cp = '$this->cp', admin = '$this->admin', password = '$this->password')");
+		$req = $conn->exec("UPDATE user SET pseudo = '$this->pseudo', nom = '$this->nom', prenom = '$this->prenom', email = '$this->email', adresse = '$this->adresse', ville = '$this->ville', cp = '$this->cp', admin = '$this->admin', password = '$this->password') WHERE email = $this->email");
 	}
 
 	public function deleteUser($conn) 
