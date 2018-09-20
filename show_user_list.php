@@ -4,6 +4,7 @@
 	include_once("userController.php");
 	include_once('ConnexionBDD.php');
 	$users = $conn->query("SELECT * FROM user");
+	$user = getUser($users)
 ?>
 
 <div id="users">
@@ -18,13 +19,10 @@
 		<?php
 			foreach ($users as $user): 
 		?> 
-		<?php
-			$oneUser = castToUser($user);
- ?>
 			<tr>
-				<td><?php echo $oneUser->pseudo ?></td>
-				<td><?php echo $oneUser->email ?></td>
-				<td><a href="./show_user.php?pseudo='<?php echo $oneUser->pseudo ?>'" class="button">Voir</a></td>
+				<td><?php echo $user->pseudo ?></td>
+				<td><?php echo $user->email ?></td>
+				<td><a href="./show_user.php?pseudo='<?php echo $user->pseudo ?>'" class="button">Voir</a></td>
 				<td><a href="#" class="button">Editer</a></td>
 				<td><a href="#" class="button">Supprimer</a></td>
 			</tr>
