@@ -3,6 +3,11 @@
 include_once('ConnexionBDD.php');
 include_once('user.php');
 
+$test = new User('t', 't', 't', 't', 't', 't', 95242, 0, 'rvge');
+var_dump($test);
+
+
+/*var_dump($user);*/
 
 function redirectUser()
 {
@@ -16,6 +21,7 @@ function getUser ($sth) {
 	$user = $sth->fetch();
 	return $user;
 }
+
 
 function createUser($conn) {
 

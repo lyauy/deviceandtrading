@@ -1,26 +1,31 @@
 <?php
-include("userController.php");
 
 session_start();
 
-$email = $_POST["email"];
+include("userController.php");
 
-$user = $conn->query("SELECT * FROM user WHERE email = '$email'");
 
-echo gettype($user);
-echo get_class($user);
-echo"<br/>";
-castToUser($user);
-if($user->rowCount()>0)
+  $email = $_POST["email"];
+  $password = $_POST["password"];
+
+
+$sth = $conn->query("SELECT * FROM user WHERE email = '$email' AND password = '$password'");
+$sth->setFetchMode(PDO::FETCH_CLASS, 'User');
+$user = $sth->fetch();
+
+if($user)
 {
-  echo "Connecté";
-  $_SESSION['fdp'] = $email;
-  echo $_SESSION['fdp'];
+  $_SESSION['userCo'] = $user;
+  header('Location: http://localhost/Location/Accueil.php');
 }
 else
   echo "Non connecté";
 
-
+/*  echo "<br/>";
+echo gettype($user);
+echo "<br />";
+echo get_class($user);
+echo"<br/>";*/
 /*var_dump($users);
 if (isset($_POST["email"]) ==) {
   echo $_POST["email"];
