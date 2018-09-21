@@ -2,31 +2,29 @@
 <p>Déposer un objet</p>
 <form action="./create_object.php" method="post">
   <fieldset>
-    <legend>Personal information:</legend>
-    Pseudo:<br>
-    <input type="text" name="pseudo">
-    <br>
+    <legend>Object information:</legend>
     Nom:<br>
     <input type="text" name="nom">
     <br>
-    Prénom:<br>
-    <input type="text" name="prenom">
-    <br><br>
-    Email:<br>
-    <input type="email" name="email">
+    Catégorie:<br>
+    <select name="typeobjet">
+        <option value="pc_portable">Ordinateur portable</option>
+        <option value="smartphone">Smartphone</option>
+        <option value="tablette">Tablette</option>
+    </select>
     <br>
-    Adresse:<br>
-    <input type="text" name="adresse">
+    Image:<br>
+    <input type="file" id="image" name="image" accept="image/png, image/jpeg" />
     <br><br>
-    Ville:<br>
-    <input type="text" name="ville">
-    <br><br>
-    Code postal:<br>
-    <input type="number" name="cp">
+    Livraison possible:<br>
+    <input type="checkbox" id="livraison" name="livraison" value="livraison" checked />
     <br>
-    Mot de passe:<br>
-    <input type="password" name="password">
+    Nombre:<br>
+    <input type="number" name="nombre">
     <br><br>
+    Commmentaire:<br>
+    <textarea rows="10" cols="50" id="commentaire" name="commentaire"></textarea>
+    <br>
     <input type="submit" value="Submit">
   </fieldset>
 </form>

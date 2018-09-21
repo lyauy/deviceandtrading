@@ -1,7 +1,7 @@
 <?php
 include_once('ConnexionBDD.php');
 
-class Location {
+class Objet {
 
 	var $id_objet;
 	var $nom;
