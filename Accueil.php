@@ -12,9 +12,11 @@
 </head>
 <body style="height:1500px;background-color: rgb(249, 249, 249);">
 <?php 
+    include_once('user.php');
     if(session_id() == '' || !isset($_SESSION)) {
-      {include_once('user.php');
-      session_start();}
+      {
+        session_start();
+      }
   }
 ?>
 <nav class="navbar navbar-expand-md bg-white navbar-white">
@@ -38,7 +40,7 @@
             <li class="nav-item">
                <?php 
                   if(isset($_SESSION['userCo'])) {
-                    echo "<a href='create_object_form.php' id='object' class='nav-link'> Mettre à louer</a>";
+                    echo "<a href='create_object_form.php' id='object' class='nav-link'>Louer</a>";
                   }
                 ?>
             </li>
@@ -59,6 +61,12 @@
                     </button>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
                       <a class="dropdown-item" href="#"><i class="fas fa-user-cog fa-fw"></i> Modifier mon profil</a>
+
+                    <?php
+                    if($_SESSION['userCo']->admin)
+                      echo "<a href='./admin.php' class='dropdown-item'><i class='fas fa-unlock-alt fa-fw'></i> Administration</a>";
+                    ?>
+                      <a href='show_object_list.php' id='show_object_list' class='dropdown-item'><i class="fas fa-laptop"></i></i> Mes objets</a>
                       <a href='logout.php' id='Deconnexion' class='dropdown-item'><i class='fas fa-sign-out-alt fa-fw'></i> Se déconnecter</a>
                     </div>
                   </div>

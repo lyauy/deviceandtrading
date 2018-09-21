@@ -17,7 +17,7 @@
     <input type="file" id="image" name="image" accept="image/png, image/jpeg" />
     <br><br>
     Livraison possible:<br>
-    <input type="checkbox" id="livraison" name="livraison" value="livraison" checked />
+    <input type="checkbox" id="livraison" name="livraison" value="1" checked />
     <br>
     Nombre:<br>
     <input type="number" name="nombre">

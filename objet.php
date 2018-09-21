@@ -5,11 +5,11 @@ class Objet {
 
 	var $id_objet;
 	var $nom;
+	var $typeobjet;
 	var $image;
-	var $disponibilité;
+	var $disponibilite;
 	var $livraison;
 	var $nombre;
-	var $typeobjet;
 	var $commentaire;
 	var $id_user;
 
@@ -26,30 +26,37 @@ class Objet {
         }
 	}
 
-    function __construct1($id_objet=null, $Pnom, $Pimage, $Pdisponibilité, $Plivraison, $Pnombre, $Ptypeobjet, $Pcommentaire, $Pid_user) {	
+    function __construct1() {	
 
-		$this->id_objet = null;
+/*		$this->id_objet = null;
 		$this->nom = $Pnom;
 		$this->image = $Pimage;
-		$this->disponibilité = $Pdisponibilité;
+		$this->disponibilite = $Pdisponibilite;
 		$this->livraison = $Plivraison;
 		$this->nombre = $Pnombre;
 		$this->commentaire = $Pcommentaire;
 		$this->id_user = $Pid_user;
-		$this->typeobjet = $Ptypeobjet;
+		$this->typeobjet = $Ptypeobjet;*/
 	}
 
-	function __construct2($Pid_objet, $Pnom, $Pimage, $Pdisponibilité, $Plivraison, $Pnombre, $Ptypeobjet, $Pcommentaire, $Pid_user) {
+	function __construct2($Pid_objet, $Pnom, $Ptypeobjet, $Pimage, $Pdisponibilite, $Plivraison, $Pnombre, $Pcommentaire, $Pid_user) {
 
 		$this->id_objet = $Pid_objet;
 		$this->nom = $Pnom;
+		$this->typeobjet = $Ptypeobjet;
 		$this->image = $Pimage;
-		$this->disponibilité = $Pdisponibilité;
+		$this->disponibilite = $Pdisponibilite;
 		$this->livraison = $Plivraison;
 		$this->nombre = $Pnombre;
 		$this->commentaire = $Pcommentaire;
 		$this->id_user = $Pid_user;
-		$this->typeobjet = $Ptypeobjet;
+
+	}
+
+	public function objetToDB($conn)
+	{
+		$req = $conn->exec("INSERT INTO objet(nom, typeobjet, image, disponibilite, livraison, nombre, id_user, commentaire) 
+			VALUES('$this->nom', '$this->typeobjet', '$this->image', '$this->disponibilite', '$this->livraison', '$this->nombre', '$this->id_user', '$this->commentaire')");
 	}
 }
 ?>
