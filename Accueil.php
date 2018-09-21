@@ -34,6 +34,13 @@
             <li class="nav-item">
                 <a class="nav-link" href="#">Link</a>
             </li>
+            <li class="nav-item">
+               <?php 
+                  if(isset($_SESSION['userCo'])) {
+                    echo "<a href='create_object_form.php' id='object' class='nav-link'> Mettre à louer</a>";
+                  }
+                ?>
+            </li>
         </ul>
     </div>
     <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">

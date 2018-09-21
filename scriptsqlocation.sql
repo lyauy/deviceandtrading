@@ -13,7 +13,6 @@
 
 
 -- Export de la structure de la base pour location
-DROP TABLE 'location'
 CREATE DATABASE IF NOT EXISTS `location` /*!40100 DEFAULT CHARACTER SET latin1 */;
 USE `location`;
 
@@ -36,25 +35,16 @@ CREATE TABLE IF NOT EXISTS `location` (
 CREATE TABLE IF NOT EXISTS `objet` (
   `id_objet` int(11) NOT NULL AUTO_INCREMENT,
   `nom` varchar(50) NOT NULL,
+  `typeobjet` varchar(50) NOT NULL,
   `image` longblob NOT NULL,
   `disponibilite` tinyint(1) NOT NULL DEFAULT '1',
   `livraison` tinyint(1) NOT NULL DEFAULT '0',
   `nombre` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
-  `id_typeobjet` int(11) NOT NULL,
+  `commentaire` longtext NOT NULL,
   PRIMARY KEY (`id_objet`),
   KEY `FK_id_objet_to_id_user` (`id_user`),
-  KEY `FK_id_objet_to_id_typeobjet` (`id_typeobjet`),
-  CONSTRAINT `FK_id_objet_to_id_typeobjet` FOREIGN KEY (`id_typeobjet`) REFERENCES `typeobjet` (`id_typeobjet`),
   CONSTRAINT `FK_id_objet_to_id_user` FOREIGN KEY (`id_user`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- Les données exportées n'étaient pas sélectionnées.
--- Export de la structure de la table location. typeobjet
-CREATE TABLE IF NOT EXISTS `typeobjet` (
-  `id_typeobjet` int(11) NOT NULL AUTO_INCREMENT,
-  `libelle` varchar(50) NOT NULL,
-  PRIMARY KEY (`id_typeobjet`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- Les données exportées n'étaient pas sélectionnées.
@@ -64,14 +54,16 @@ CREATE TABLE IF NOT EXISTS `user` (
   `pseudo` varchar(50) NOT NULL,
   `nom` varchar(50) NOT NULL,
   `prenom` varchar(50) NOT NULL,
-  `email` varchar(50) NOT NULL UNIQUE,
+  `email` varchar(50) NOT NULL,
   `adresse` varchar(50) NOT NULL,
   `ville` varchar(50) NOT NULL,
   `cp` int(5) NOT NULL,
   `admin` tinyint(1) NOT NULL DEFAULT '0',
   `password` varchar(50) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `pseudo` (`pseudo`),
+  UNIQUE KEY `email` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=latin1;
 
 -- Les données exportées n'étaient pas sélectionnées.
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

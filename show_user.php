@@ -4,6 +4,7 @@ include_once('user.php');
 include_once("userController.php");
 
 $getPseudo = $_GET['pseudo'];
+var_dump($getPseudo);
 $req = $conn->query("SELECT * FROM user WHERE pseudo = $getPseudo");
 $user = getUser($req);
 
