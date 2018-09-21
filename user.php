@@ -24,12 +24,6 @@ class User {
         {
         	self::__construct1();
         }
-        var_dump($argv);
-         if (func_num_args() == 9) {
-         	self::__construct2( $argv[0], $argv[1], $argv[2], $argv[3], $argv[4], $argv[5], $argv[6], $argv[7], $argv[8] );
-         }
-         else
-         	self::__construct1();
     }
 
     function __construct1() {	

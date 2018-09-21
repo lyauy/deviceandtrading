@@ -73,13 +73,11 @@
 
   <h3><!-- Vous êtes connecté en tant que : -->
 <!--     echo $_SESSION['userCo']->nom." ". $_SESSION['userCo']->prenom;  -->
-    <?php 
-      if (isset($_SESSION['userCo'])) {
+<!--       if (isset($_SESSION['userCo'])) {
         echo "Vous êtes connecté en tant que : ".$_SESSION['userCo']->nom." ".$_SESSION['userCo']->prenom;
       }
       else
-        echo "Vous n'êtes pas connecté."
-    ?>
+        echo "Vous n'êtes pas connecté." -->
   </h3>
   <div class="row">
 <!--     <div class="col-md-4">
