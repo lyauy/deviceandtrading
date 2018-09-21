@@ -82,33 +82,50 @@
     </div>
 </nav>
 
+<div class="container" style="margin-top:350px;">
 
-<div class="container" style="margin-top:50px;">
-
-  <h3><!-- Vous êtes connecté en tant que : -->
-<!--     echo $_SESSION['userCo']->nom." ". $_SESSION['userCo']->prenom;  -->
-<!--       if (isset($_SESSION['userCo'])) {
-        echo "Vous êtes connecté en tant que : ".$_SESSION['userCo']->nom." ".$_SESSION['userCo']->prenom;
-      }
-      else
-        echo "Vous n'êtes pas connecté." -->
+  <h3>
+    <p>
+      Liste des dernières nouveautés :
+    </p>
   </h3>
-  <div class="row">
-<!--     <div class="col-md-4">
-      <p>
-       <?php
-        /*var_dump($_SESSION['userCo']);*/
-       ?>
-      </p>   
-    </div> -->
-<!--     <div class="col-md-4"> 
-      <p>A fixed navigation bar stays visible in a fixed position (top or bottom) independent of the page scroll.</p>
-      <p>A fixed navigation bar stays visible in a fixed position (top or bottom) independent of the page scroll.</p>
+  <div class="row"> 
+    <div id="carouselExample" class="carousel slide" data-ride="carousel" data-interval="9000">
+        <div class="carousel-inner row w-100 mx-auto" role="listbox">
+            <div class="carousel-item col-md-3 active">
+                <img class="img-fluid mx-auto d-block" src="//placehold.it/600x400/000/fff?text=1" alt="slide 1">
+            </div>
+            <div class="carousel-item col-md-3">
+                <img class="img-fluid mx-auto d-block" src="//placehold.it/600x400?text=2" alt="slide 2">
+            </div>
+            <div class="carousel-item col-md-3">
+                <img class="img-fluid mx-auto d-block" src="//placehold.it/600x400?text=3" alt="slide 3">
+            </div>
+            <div class="carousel-item col-md-3">
+                <img class="img-fluid mx-auto d-block" src="//placehold.it/600x400?text=4" alt="slide 4">
+            </div>
+            <div class="carousel-item col-md-3">
+                <img class="img-fluid mx-auto d-block" src="//placehold.it/600x400?text=5" alt="slide 5">
+            </div>
+            <div class="carousel-item col-md-3">
+                <img class="img-fluid mx-auto d-block" src="//placehold.it/600x400?text=6" alt="slide 6">
+            </div>
+            <div class="carousel-item col-md-3">
+                <img class="img-fluid mx-auto d-block" src="//placehold.it/600x400?text=7" alt="slide 7">
+            </div>
+            <div class="carousel-item col-md-3">
+                <img class="img-fluid mx-auto d-block" src="//placehold.it/600x400?text=8" alt="slide 7">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
+            <i class="fas fa-chevron-left fa-3x"></i>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next text-faded" href="#carouselExample" role="button" data-slide="next">
+          <i class="fas fa-chevron-right fa-3x"></i>
+            <span class="sr-only">Next</span>
+        </a>
     </div>
-    <div class="col-md-4"> 
-      <p>A fixed navigation bar stays visible in a fixed position (top or bottom) independent of the page scroll.</p>
-      <p>A fixed navigation bar stays visible in a fixed position (top or bottom) independent of the page scroll.</p> 
-    </div> -->
   </div>
 
 <div id="id01" class="modal">
@@ -140,9 +157,11 @@
 
 </div>
 
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script type="text/javascript" src="./FeuilleJs.js"></script>
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<!--   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
 
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 

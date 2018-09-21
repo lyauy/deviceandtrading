@@ -5,8 +5,8 @@ session_start();
 include("userController.php");
 
 
-  $email = $_POST["email"];
-  $password = $_POST["password"];
+$email = $_POST["email"];
+$password = $_POST["password"];
 
 
 $sth = $conn->query("SELECT * FROM user WHERE email = '$email' AND password = '$password'");
