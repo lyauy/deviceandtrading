@@ -24,7 +24,7 @@ class User {
         {
         	self::__construct1();
         }
-
+    }
 
     function __construct1() {	
 	}
@@ -47,12 +47,6 @@ class User {
 	{
 		$req = $conn->exec("INSERT INTO user(pseudo, nom, prenom, email, adresse, ville, cp, admin, password) 
 			VALUES('$this->pseudo', '$this->nom', '$this->prenom', '$this->email', '$this->adresse', '$this->ville', '$this->cp', '$this->admin', '$this->password')");
-	}
-
-	public function redirectUser($user)
-	{
-		header("Location: ./show_user_list.php");
-		die();
 	}
 
 	public function saveToDB($conn)
