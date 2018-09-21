@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <body>
 
@@ -31,4 +31,8 @@
 </form>
 
 </body>
-</html>
+</html> -->
+
+<?php 
+
+?>

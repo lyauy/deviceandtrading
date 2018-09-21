@@ -24,8 +24,7 @@ class User {
         {
         	self::__construct1();
         }
- 
-    }
+
 
     function __construct1() {	
 	}
@@ -71,4 +70,3 @@ class User {
 	
 }
 
-?>
