@@ -64,9 +64,17 @@ CREATE TABLE IF NOT EXISTS `user` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `pseudo` (`pseudo`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1;
+
 
 -- Les données exportées n'étaient pas sélectionnées.
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+
+INSERT INTO user (id, pseudo, nom, prenom, email, adresse, ville, cp, admin, password) VALUES (NULL, 'oiu', 'valeur 2', 'valeur 2', 'nriqoeg@hotmail.fr', 'valeur 2', 'valeur 2', 95750, 0, 'gvjhb');
+INSERT INTO user (id, pseudo, nom, prenom, email, adresse, ville, cp, admin, password) VALUES (NULL, 'fez', 'valeur 2', 'valeur 2', 'gre@hotmail.fr', 'valeur 2', 'valeur 2', 95750, 0, 'gvjhb');
+INSERT INTO user (id, pseudo, nom, prenom, email, adresse, ville, cp, admin, password) VALUES (NULL, 'feza', 'valeur 2', 'valeur 2', 'evqs@hotmail.fr', 'valeur 2', 'valeur 2', 95750, 0, 'gvjhb');
+INSERT INTO user (id, pseudo, nom, prenom, email, adresse, ville, cp, admin, password) VALUES (NULL, 'azef', 'valeur 2', 'valeur 2', 'sgdf@hotmail.fr', 'valeur 2', 'valeur 2', 95750, 0, 'gvjhb');
+INSERT INTO user (id, pseudo, nom, prenom, email, adresse, ville, cp, admin, password) VALUES (NULL, 'vqvs', 'valeur 2', 'valeur 2', 'dso@hotmail.fr', 'valeur 2', 'valeur 2', 95750, 0, 'gvjhb');
+INSERT INTO user (id, pseudo, nom, prenom, email, adresse, ville, cp, admin, password) VALUES (NULL, 'dosqk', 'valeur 2', 'valeur 2', 'ejzi@hotmail.fr', 'valeur 2', 'valeur 2', 95750, 0, 'gvjhb');

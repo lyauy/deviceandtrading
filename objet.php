@@ -27,16 +27,6 @@ class Objet {
 	}
 
     function __construct1() {	
-
-/*		$this->id_objet = null;
-		$this->nom = $Pnom;
-		$this->image = $Pimage;
-		$this->disponibilite = $Pdisponibilite;
-		$this->livraison = $Plivraison;
-		$this->nombre = $Pnombre;
-		$this->commentaire = $Pcommentaire;
-		$this->id_user = $Pid_user;
-		$this->typeobjet = $Ptypeobjet;*/
 	}
 
 	function __construct2($Pid_objet, $Pnom, $Ptypeobjet, $Pimage, $Pdisponibilite, $Plivraison, $Pnombre, $Pcommentaire, $Pid_user) {

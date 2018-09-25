@@ -27,7 +27,6 @@ function getUser ($sth) {
 	return $users;
 }
 
-
 function createUser($conn) {
 
 	$newUser = new User($_POST['pseudo'], $_POST['nom'], $_POST['prenom'], $_POST['email'], $_POST['adresse'], $_POST['ville'], $_POST['cp'], 0, $_POST['password']);
@@ -43,7 +42,12 @@ function editUser($conn) {
     window.alert('Succesfully Updated');
     window.location.href='./Accueil.php';
     </script>");
+    header("Location: ./Accueil.php");
 }
 
+function DeleteUser($user){
+	header("Location: ./Accueil");
+	die();
+}
 ?>
 
