@@ -13,10 +13,9 @@ function redirectUser()
 function getUser ($sth) {
 
 	$sth->setFetchMode(PDO::FETCH_CLASS, 'User');
-	$user = $sth->fetch();
-	return $user;
+	$users = $sth->fetchall();
+	return $users;
 }
-
 
 function createUser($conn) {
 
@@ -33,7 +32,12 @@ function editUser($conn) {
     window.alert('Succesfully Updated');
     window.location.href='./Accueil.php';
     </script>");
+    header("Location: ./Accueil.php");
 }
 
+function DeleteUser($user){
+	header("Location: ./Accueil");
+	die();
+}
 ?>
 
