@@ -1,7 +1,7 @@
 <?php
 include_once("userController.php");
 
-$user = unserialize($_POST['user']);
+	$user = unserialize($_POST['user']);
 
 ?>
 
@@ -18,8 +18,15 @@ $user = unserialize($_POST['user']);
 
 </head>
 <body style="height:1500px;background-color: rgb(249, 249, 249);">
-
-<?php include_once('navbar.php') ?>
+<?php 
+    include_once('user.php');
+    if(session_id() == '' || !isset($_SESSION)) {
+      {
+        session_start();
+      }
+  }
+ include_once('navbar.php') 
+ ?>
 
 <div class="container">
   <h2>Informations personnelles</h2>
@@ -56,7 +63,8 @@ $user = unserialize($_POST['user']);
       <label for="password">Mot de passe:</label>
       <input type="password" class="form-control" placeholder="Enter password" name="password" value="<?php echo $user->password ?>">
     </div>
-    <button type="submit" class="btn btn-primary"><i class="fas fa-check"></i> Valider</button>
+    <a href="./admin.php" class="btn btn-primary float-left"><i class="fas fa-undo-alt"></i> Retour</a>
+    <button type="submit" class="btn btn-primary float-right"><i class="fas fa-check"></i> Valider</button>
   </form>
 </div>
 

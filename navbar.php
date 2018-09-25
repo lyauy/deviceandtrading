@@ -39,7 +39,7 @@
                        <?php echo $_SESSION['userCo']->nom." ".$_SESSION['userCo']->prenom; ?>
                       </button>
                       <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#"><i class="fas fa-user-cog fa-fw"></i> Modifier mon profil</a>
+                        <a class="dropdown-item" href="./ModifUser.php"><i class="fas fa-user-cog fa-fw"></i> Modifier mon profil</a>
 
                       <?php
                       if($_SESSION['userCo']->admin)
