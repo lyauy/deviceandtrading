@@ -13,8 +13,8 @@ function redirectObjet()
 function getObjet ($sth) {
 
 	$sth->setFetchMode(PDO::FETCH_CLASS, 'Objet');
-	$objet = $sth->fetch();
-	return $objet;
+	$objets = $sth->fetchall();
+	return $objets;
 }
 
 ?>

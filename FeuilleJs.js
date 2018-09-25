@@ -1,18 +1,4 @@
 // Get the modal
-var modal = document.getElementById('id01');
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-
-  document.getElementById("Deconnexion").onclick = function () {
-        alert('Déconnexion de votre session');
-    };
-
-
 $('#carouselExample').on('slide.bs.carousel', function (e) {
 
     var $e = $(e.relatedTarget);
@@ -33,3 +19,18 @@ $('#carouselExample').on('slide.bs.carousel', function (e) {
         }
     }
 });
+
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+  document.getElementById("Deconnexion").onclick = function () {
+        alert('Déconnexion de votre session');
+    };
+
+

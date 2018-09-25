@@ -13,6 +13,7 @@
 
 
 -- Export de la structure de la base pour location
+DROP DATABASE `location`;
 CREATE DATABASE IF NOT EXISTS `location` /*!40100 DEFAULT CHARACTER SET latin1 */;
 USE `location`;
 
@@ -63,7 +64,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `pseudo` (`pseudo`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- Les données exportées n'étaient pas sélectionnées.
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

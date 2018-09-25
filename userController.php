@@ -10,11 +10,21 @@ function redirectUser()
 	die();
 }
 
+function getAuthUserId ($conn) {
+
+	session_start();
+
+	$useremail = $_SESSION['userCo']->email;
+	$req = $conn->query("SELECT id FROM user WHERE email = '$useremail'");
+	$userid = $req->fetch();
+	return $userid[0];
+}
+
 function getUser ($sth) {
 
 	$sth->setFetchMode(PDO::FETCH_CLASS, 'User');
-	$user = $sth->fetch();
-	return $user;
+	$users = $sth->fetchall();
+	return $users;
 }
 
 
