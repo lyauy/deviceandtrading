@@ -1,3 +1,5 @@
+
+// Get the modal
 $('#carouselExample').on('slide.bs.carousel', function (e) {
 
     var $e = $(e.relatedTarget);
@@ -20,6 +22,7 @@ $('#carouselExample').on('slide.bs.carousel', function (e) {
 });
 
 // Get the modal
+
 var modal = document.getElementById('id01');
 
 // When the user clicks anywhere outside of the modal, close it

@@ -14,12 +14,16 @@
 </head>
 <body style="height:1500px;background-color: rgb(249, 249, 249);">
 <?php 
+    include_once("objetController.php");
     include_once('user.php');
-    if(session_id() == '' || !isset($_SESSION)) {
+    if(session_id() == '' || !isset($_SESSION))
       {
         session_start();
       }
-  }
+
+    $objets = $conn->query("SELECT * FROM objet ORDER BY id_objet DESC");
+    $objets = getObjet($objets)
+  
 ?>
 
 <?php include_once('navbar.php') ?>
@@ -34,7 +38,24 @@
   <div class="row"> 
     <div id="carouselExample" class="carousel slide" data-ride="carousel" data-interval="9000">
         <div class="carousel-inner row w-100 mx-auto" role="listbox">
-            <div class="carousel-item col-md-3 active">
+          <?php 
+              $i = 1; 
+              foreach ($objets as $objet) {
+
+                if ($i == 1) {
+                  echo '<div class="carousel-item col-md-3 active">
+                    <img class="img-fluid mx-auto d-block" src="'.$objet->image.'"  alt="slide '.$i.'"><a href="./show_object.php?id_objet='.$objet->id_objet.'">'.$objet->nom.'</a>
+                  </div>';
+                }
+                else {
+                  echo '<div class="carousel-item col-md-3">
+                    <img class="img-fluid mx-auto d-block" src="'.$objet->image.'"  alt="slide '.$i.'"><a href="./show_object.php?id_objet='.$objet->id_objet.'">'.$objet->nom.'</a>
+                  </div>';
+                }
+                $i++;
+              }
+          ?>
+            <!--<div class="carousel-item col-md-3 active">
                 <img class="img-fluid mx-auto d-block" src="//placehold.it/600x400/000/fff?text=1" alt="slide 1">
             </div>
             <div class="carousel-item col-md-3">
@@ -56,8 +77,12 @@
                 <img class="img-fluid mx-auto d-block" src="//placehold.it/600x400?text=7" alt="slide 7">
             </div>
             <div class="carousel-item col-md-3">
+<<<<<<< HEAD
+                <img class="img-fluid mx-auto d-block" src="//placehold.it/600x400?text=8" alt="slide 7">
+            </div>-->
                 <img class="img-fluid mx-auto d-block" src="//placehold.it/600x400?text=8" alt="slide 8">
             </div>
+
         </div>
         <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
             <i class="fas fa-chevron-left fa-3x"></i>
@@ -100,6 +125,13 @@
 
 </div>
 
+  <script type="text/javascript" src="./FeuilleJs.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
