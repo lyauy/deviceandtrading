@@ -12,7 +12,10 @@ function redirectUser()
 
 function getAuthUserId ($conn) {
 
-	session_start();
+	  if(session_id() == '' || !isset($_SESSION))
+      {
+        session_start();
+      }
 
 	$useremail = $_SESSION['userCo']->email;
 	$req = $conn->query("SELECT id FROM user WHERE email = '$useremail'");
@@ -31,7 +34,7 @@ function createUser($conn) {
 
 	$newUser = new User($_POST['pseudo'], $_POST['nom'], $_POST['prenom'], $_POST['email'], $_POST['tel'], $_POST['adresse'], $_POST['ville'], $_POST['cp'], 0, $_POST['password']);
 	$newUser->userToDB($conn);
-	redirectUser();
+	header("Location: ./Accueil.php");
 }
 
 function editUser($conn) {
