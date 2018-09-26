@@ -78,6 +78,10 @@
       <input type="text" class="form-control" name="email" placeholder="Saisir l'email" required>
     </div>
     <div class="form-group">
+      <label for="tel">Tel:</label>
+      <input type="text" class="form-control" name="tel" placeholder="Saisir le numéro de téléphone" required>
+    </div>
+    <div class="form-group">
       <label for="adresse">Adresse:</label>
       <input type="text" class="form-control" name="adresse" placeholder="Saisir l'adresse" required>
     </div>

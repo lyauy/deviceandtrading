@@ -19,9 +19,6 @@
     Livraison possible:<br>
     <input type="checkbox" id="livraison" name="livraison" value="1" checked />
     <br>
-    Nombre:<br>
-    <input id="nombre" type="number" name="nombre">
-    <br><br>
     Commentaire:<br>
     <textarea id="commentaire" rows="10" cols="50" id="commentaire" name="commentaire"></textarea>
     <br>
@@ -87,10 +84,6 @@
           <label class="custom-control-label" for="livraison">Livraison possible ?</label>
         </div>  
     </div>  
-    <div class="form-group">
-      <label for="nom">Nombre d'article:</label>
-      <input class="form-control" id="nombre" type="number" name="nombre" placeholder="Saisir le nombre d'article à mettre en vente" min="1" max="1000"required>
-    </div>
     <div class="form-group">
         <label for="commentaire">Commentaire</label>
         <textarea class="form-control" id="commentaire" name="commentaire"  rows="10" cols="50"></textarea>

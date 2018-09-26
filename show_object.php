@@ -58,7 +58,6 @@ var_dump($unuser);
 				echo 'Indisponible';
 			} ?>
 		</td></tr>
-		<tr><td>Nombre restant : <?php echo $unobjet->nombre; ?></td></tr>
 		<tr><td>Commentaire : <?php echo $unobjet->commentaire; ?></td></tr>
 		<tr><td>Propriété de : <?php echo '<a href=./show_user?pseudo='.$unuser->pseudo.'>'.$unuser->pseudo.'</a>'; ?></td></tr>
 		<tr><td>

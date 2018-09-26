@@ -29,14 +29,14 @@ function getUser ($sth) {
 
 function createUser($conn) {
 
-	$newUser = new User($_POST['pseudo'], $_POST['nom'], $_POST['prenom'], $_POST['email'], $_POST['adresse'], $_POST['ville'], $_POST['cp'], 0, $_POST['password']);
+	$newUser = new User($_POST['pseudo'], $_POST['nom'], $_POST['prenom'], $_POST['email'], $_POST['tel'], $_POST['adresse'], $_POST['ville'], $_POST['cp'], 0, $_POST['password']);
 	$newUser->userToDB($conn);
 	redirectUser();
 }
 
 function editUser($conn) {
 
-	$newUser = new User($_POST['pseudo'], $_POST['nom'], $_POST['prenom'], $_POST['email'], $_POST['adresse'], $_POST['ville'], $_POST['cp'], $_POST['admin'], $_POST['password']);
+	$newUser = new User($_POST['pseudo'], $_POST['nom'], $_POST['prenom'], $_POST['email'], $_POST['tel'], $_POST['adresse'], $_POST['ville'], $_POST['cp'], $_POST['admin'], $_POST['password']);
 	$newUser->saveToDB($conn);
 	echo ("<script LANGUAGE='JavaScript'>
     window.alert('Succesfully Updated');

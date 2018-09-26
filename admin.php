@@ -45,6 +45,7 @@
 		            <th>Nom</th>
 		            <th>Prénom</th>
 		            <th>Email</th>
+                <th>Téléphone</th>
 		            <th>Adresse</th>
 		            <th>Ville</th>
 		            <th>Code postal</th>
@@ -63,6 +64,7 @@
 						<td><?php echo $user->nom ?></td>
 						<td><?php echo $user->prenom ?></td>
 						<td><?php echo $user->email ?></td>
+            <td><?php echo $user->tel ?></td>
 						<td><?php echo $user->adresse ?></td>
 						<td><?php echo $user->ville ?></td>
 						<td><?php echo $user->cp ?></td>

@@ -12,10 +12,9 @@
         var typeobjet = $('#typeobjet').val();
         var image = $('#image').val();
         var livraison = $('#livraison').val();
-        var nombre = $('#nombre').val(); 
         var commentaire = $('#commentaire').val();
 		
-     	if(nom == '' || typeobjet == '' || image == '' || livraison == '' || nombre == '')
+     	if(nom == '' || typeobjet == '' || image == '' || livraison == '')
      	{
      		alert("Tous les champs n'ont pas été saisis");
      	}
@@ -34,7 +33,7 @@
                 },
                 error: function() {
                     alert('Objet créé !');
-                    window.location.href = "./Accueil.php";
+                    window.location.href = "./create_object.php";
 
                 }
             });
