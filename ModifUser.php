@@ -28,7 +28,7 @@ include_once("userController.php");
  include_once('navbar.php') 
  ?>
 
-<div class="container">
+<div class="container" style="margin-top:100px;">
   <h2>Informations personnelles</h2>
   <form action="./edit_user.php" method="post">
     <div class="form-group">
@@ -45,7 +45,7 @@ include_once("userController.php");
     </div>
     <div class="form-group">
       <label for="email">Email:</label>
-      <input type="email" class="form-control" name="email" value="<?php echo $user->email ?>">
+      <input type="text" class="form-control" name="email" value="<?php echo $user->email ?>">
     </div>
     <div class="form-group">
       <label for="adresse">Adresse:</label>
@@ -58,6 +58,17 @@ include_once("userController.php");
     <div class="form-group">
       <label for="cp">Code postal:</label>
       <input type="text" class="form-control" name="cp" value="<?php echo $user->cp ?>">
+    </div>
+    <div class="form-group">
+    	<label for="admin">Admin:</label>
+		  <select name="admin" class="custom-select">
+        <?php 
+          if ($user->admin)
+            echo"<option selected value='1'>Oui</option><option value='0'>Non</option>";
+          else
+            echo"<option selected value='0'>Non</option><option value='1'>Oui</option>";
+        ?>
+		  </select>
     </div>
     <div class="form-group">
       <label for="password">Mot de passe:</label>

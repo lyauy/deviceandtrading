@@ -16,7 +16,7 @@
     text-decoration: none;
 }
 /* Full-width input fields */
-input[type=text], input[type=password] {
+.FormCo {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -236,3 +236,8 @@ img
 #News {background-color: green;}
 #Contact {background-color: blue;}
 #About {background-color: orange;}
+
+.goer {
+/*    width: 90%;*/
+/*    height: 100%;*/
+}

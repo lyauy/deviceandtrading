@@ -6,10 +6,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="./FeuilleStyle.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="./FeuilleStyle.css">
 
 </head>
 <body style="height:1500px;background-color: rgb(249, 249, 249);">
@@ -44,17 +46,29 @@
 
                 if ($i == 1) {
                   echo '<div class="carousel-item col-md-3 active">
-                    <img class="img-fluid mx-auto d-block" src="'.$objet->image.'"  alt="slide '.$i.'"><a href="./show_object.php?id_objet='.$objet->id_objet.'">'.$objet->nom.'</a>
+                    <img class="goer mx-auto d-block" src="'.$objet->image.'"  alt="slide '.$i.'"><a href="./show_object.php?id_objet='.$objet->id_objet.'">'.$objet->nom.'</a>
                   </div>';
                 }
                 else {
                   echo '<div class="carousel-item col-md-3">
-                    <img class="img-fluid mx-auto d-block" src="'.$objet->image.'"  alt="slide '.$i.'"><a href="./show_object.php?id_objet='.$objet->id_objet.'">'.$objet->nom.'</a>
+                    <img class="goer mx-auto d-block" src="'.$objet->image.'"  alt="slide '.$i.'"><a href="./show_object.php?id_objet='.$objet->id_objet.'">'.$objet->nom.'</a>
                   </div>';
                 }
                 $i++;
               }
           ?>
+          <div class="carousel-item col-md-3">
+                <img class="goer mx-auto d-block" src="//placehold.it/600x400?text=3" alt="slide 3">
+            </div>
+            <div class="carousel-item col-md-3">
+                <img class="goer mx-auto d-block" src="//placehold.it/600x400?text=4" alt="slide 4" width="500" height="600">
+            </div>
+            <div class="carousel-item col-md-3">
+                <img class="goer mx-auto d-block" src="//placehold.it/600x400?text=5" alt="slide 5" width="500" height="600">
+            </div>
+            <div class="carousel-item col-md-3">
+                <img class="goer mx-auto d-block" src="//placehold.it/600x400?text=6" alt="slide 6" width="500" height="600">
+            </div>
             <!--<div class="carousel-item col-md-3 active">
                 <img class="img-fluid mx-auto d-block" src="//placehold.it/600x400/000/fff?text=1" alt="slide 1">
             </div>
@@ -80,8 +94,8 @@
 <<<<<<< HEAD
                 <img class="img-fluid mx-auto d-block" src="//placehold.it/600x400?text=8" alt="slide 7">
             </div>-->
-                <img class="img-fluid mx-auto d-block" src="//placehold.it/600x400?text=8" alt="slide 8">
-            </div>
+ <!--                <img class="img-fluid mx-auto d-block" src="//placehold.it/600x400?text=8" alt="slide 8">
+            </div> -->
 
         </div>
         <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
@@ -105,10 +119,10 @@
 
     <div class="container">
       <label for="uname"><b>Adresse E-mail</b></label>
-      <input type="text" placeholder="Entrez votre adresse Email" name="email" required>
+      <input class="FormCo" type="text" placeholder="Entrez votre adresse Email" name="email" required>
 
       <label for="psw"><b>Mot de passe</b></label>
-      <input type="password" placeholder="Entrez votre mot de passe" name="password" required>
+      <input class="FormCo" type="password" placeholder="Entrez votre mot de passe" name="password" required>
   
       <button class="button" type="submit">Se connecter</button>
       <label>
@@ -125,13 +139,6 @@
 
 </div>
 
-  <script type="text/javascript" src="./FeuilleJs.js"></script>
-  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
