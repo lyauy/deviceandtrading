@@ -58,16 +58,16 @@
               }
           ?>
           <div class="carousel-item col-md-3">
-                <img class="goer mx-auto d-block" src="//placehold.it/600x400?text=3" alt="slide 3">
+                <img class="imgSlide mx-auto d-block" src="//placehold.it/600x400?text=3" alt="slide 3">
             </div>
             <div class="carousel-item col-md-3">
-                <img class="goer mx-auto d-block" src="//placehold.it/600x400?text=4" alt="slide 4" width="500" height="600">
+                <img class="imgSlide mx-auto d-block" src="//placehold.it/600x400?text=4" alt="slide 4" width="500" height="600">
             </div>
             <div class="carousel-item col-md-3">
-                <img class="goer mx-auto d-block" src="//placehold.it/600x400?text=5" alt="slide 5" width="500" height="600">
+                <img class="imgSlide mx-auto d-block" src="//placehold.it/600x400?text=5" alt="slide 5" width="500" height="600">
             </div>
             <div class="carousel-item col-md-3">
-                <img class="goer mx-auto d-block" src="//placehold.it/600x400?text=6" alt="slide 6" width="500" height="600">
+                <img class="imgSlide mx-auto d-block" src="//placehold.it/600x400?text=6" alt="slide 6" width="500" height="600">
             </div>
             <!--<div class="carousel-item col-md-3 active">
                 <img class="img-fluid mx-auto d-block" src="//placehold.it/600x400/000/fff?text=1" alt="slide 1">
@@ -110,35 +110,9 @@
         </a>
     </div>
   </div>
-
-
-<div id="id01" class="modal">
-  
-  <form class="modal-content animate" action="./action_page.php" method="post">
-    <div class="imgcontainer">
-      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-    </div>
-
-    <div class="container">
-      <label for="uname"><b>Adresse E-mail</b></label>
-      <input class="FormCo" type="text" placeholder="Entrez votre adresse Email" name="email" required>
-
-      <label for="psw"><b>Mot de passe</b></label>
-      <input class="FormCo" type="password" placeholder="Entrez votre mot de passe" name="password" required>
-  
-      <button class="button" type="submit">Se connecter</button>
-      <label>
-        <input type="checkbox" checked="checked" name="remember"> Se rappeler de moi
-      </label>
-    </div>
-
-    <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="button cancelbtn">Cancel</button>
-      <span class="psw"><a href="./create_user_form.php">S'inscrire</a> / <a href="#">Mot de passe oublié ?</a></span>
-    </div>
-  </form>
-</div>
-
+<?php
+  include_once('modalCo.php');
+?>
 </div>
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

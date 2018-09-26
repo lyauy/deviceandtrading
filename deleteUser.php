@@ -3,5 +3,5 @@
 	$user = unserialize($_POST['user']);
 
 	$req = $conn->exec("DELETE FROM user WHERE email = '$user->email'");
-	header("location: template.php"); 
+	header("location: admin.php"); 
 ?>

@@ -1,10 +1,3 @@
-<?php
-include_once("userController.php");
-
-	$user = unserialize($_POST['user']);
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,12 +18,21 @@ include_once("userController.php");
         session_start();
       }
   }
+  if(isset($_POST['user']))
+    $user = unserialize($_POST['user']);
+  else
+    $user = $_SESSION['userCo'];
  include_once('navbar.php') 
  ?>
 
 <div class="container" style="margin-top:100px;">
   <h2>Informations personnelles</h2>
-  <form action="./edit_user.php" method="post">
+  <?php
+  if (isset($_POST['user']))
+    echo "<form action='./edit_user.php' method='post'>";
+  else
+    echo "<form action='./editProfil.php' method='post'>";
+  ?>
     <div class="form-group">
       <label for="email">Pseudo:</label>
       <input type="text" class="form-control" name="pseudo" value="<?php echo $user->pseudo ?>">
@@ -48,6 +50,10 @@ include_once("userController.php");
       <input type="text" class="form-control" name="email" value="<?php echo $user->email ?>">
     </div>
     <div class="form-group">
+      <label for="tel">Tel:</label>
+      <input type="text" class="form-control" name="tel" value="0<?php echo $user->tel ?>">
+    </div>
+    <div class="form-group">
       <label for="adresse">Adresse:</label>
       <input type="text" class="form-control" name="adresse" value="<?php echo $user->adresse ?>">
     </div>
@@ -59,23 +65,34 @@ include_once("userController.php");
       <label for="cp">Code postal:</label>
       <input type="text" class="form-control" name="cp" value="<?php echo $user->cp ?>">
     </div>
-    <div class="form-group">
-    	<label for="admin">Admin:</label>
-		  <select name="admin" class="custom-select">
-        <?php 
-          if ($user->admin)
-            echo"<option selected value='1'>Oui</option><option value='0'>Non</option>";
-          else
-            echo"<option selected value='0'>Non</option><option value='1'>Oui</option>";
-        ?>
-		  </select>
-    </div>
+    <?php 
+    if (isset($_POST['user'])) {
+      echo"
+      <div class='form-group'>
+      	<label for='admin'>Admin:</label>
+  		  <select name='admin' class='custom-select'>";
+            if ($user->admin)
+              echo "<option selected value='1'>Oui</option><option value='0'>Non</option>";
+            else
+              echo "<option selected value='0'>Non</option><option value='1'>Oui</option>";
+        echo"</select>
+      </div>";
+    }
+    else
+
+    ?>
     <div class="form-group">
       <label for="password">Mot de passe:</label>
       <input type="password" class="form-control" placeholder="Enter password" name="password" value="<?php echo $user->password ?>">
     </div>
-    <a href="./admin.php" class="btn btn-primary float-left"><i class="fas fa-undo-alt"></i> Retour</a>
-    <button type="submit" class="btn btn-primary float-right"><i class="fas fa-check"></i> Valider</button>
+    <?php 
+    if (isset($_POST['user']))
+      echo"<a href='./admin.php' class='btn btn-primary float-left'><i class='fas fa-undo-alt'></i> Retour</a>";
+    else
+      echo"<a href='./Accueil.php' class='btn btn-primary float-left'><i class='fas fa-undo-alt'></i> Retour</a>";
+
+    echo"<button type='submit' class='btn btn-primary float-right'><i class='fas fa-check'></i> Valider</button>";
+    ?>
   </form>
 </div>
 
