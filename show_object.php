@@ -7,7 +7,7 @@ include_once("locationController.php");
 include_once('objet.php');
 include_once("objetController.php");
 
-	$userid = getAuthUserId($conn);	
+$userid = getAuthUserId($conn);	
 if(isset($_SESSION)){
 
 	$req2 = $conn->query("SELECT * FROM user WHERE id=$userid");
@@ -41,7 +41,7 @@ var_dump($unuser);
 
 <div id="show_object">
 	<table>
-		<tr>Image : <?php echo "<img src='".$unobjet->image."' width='200' height='200'  />"; ?></tr>
+		<tr>Image : <?php echo "<img src='./images/".$unobjet->image."' width='200' height='200'  />"; ?></tr>
 		<tr><td>Nom : <?php echo $unobjet->nom; ?></td></tr>
 		<tr><td>Catégorie : <?php echo $unobjet->typeobjet; ?></td></tr>
 		<tr><td>Livraison : 

@@ -56,7 +56,7 @@
 				<?php foreach ($objets as $objet): ?> 
 					<tr>
 						<td><?php echo $objet->id_objet; ?></td>
-						<td><?php echo "<img src='".$objet->image."' width='150' height='150'  />"; ?></td>
+						<td><?php echo "<img src='./images/".$objet->image."' width='150' height='150'  />"; ?></td>
 						<td><?php echo $objet->nom; ?></td>
 						<td><?php echo $objet->typeobjet; ?></td>
 						<td>

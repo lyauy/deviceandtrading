@@ -75,7 +75,7 @@
 						<td><?php echo $objet->nom; ?></td>
 						<td><?php echo $objet->typeobjet; ?></td>
 						<td><?php echo $user->pseudo; ?></td>
-						<td><?php echo "<img src='".$objet->image."' width='200' height='200'  />"; ?></td>
+						<td><?php echo "<img src='./images/".$objet->image."' width='200' height='200'  />"; ?></td>
 						<td><?php echo $location->debutloc; ?></td>
 						<td><?php echo $location->finloc; ?></td>
 						<td>

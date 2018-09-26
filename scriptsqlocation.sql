@@ -38,6 +38,7 @@ CREATE TABLE IF NOT EXISTS `objet` (
   `nom` varchar(50) NOT NULL,
   `typeobjet` varchar(50) NOT NULL,
   `image` longblob NOT NULL,
+  `prix` int(5) NOT NULL,
   `disponibilite` tinyint(1) NOT NULL DEFAULT '1',
   `livraison` tinyint(1) NOT NULL DEFAULT '0',
   `id_user` int(11) NOT NULL,
@@ -55,7 +56,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `nom` varchar(50) NOT NULL,
   `prenom` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `tel` varchar(10) NOT NULL,
+  `tel` numeric(10) NOT NULL,
   `adresse` varchar(50) NOT NULL,
   `ville` varchar(50) NOT NULL,
   `cp` int(5) NOT NULL,
@@ -72,9 +73,9 @@ CREATE TABLE IF NOT EXISTS `user` (
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 
-INSERT INTO user (id, pseudo, nom, prenom, email, adresse, ville, cp, admin, password) VALUES (NULL, 'oiu', 'valeur 2', 'valeur 2', 'nriqoeg@hotmail.fr', 'valeur 2', 'valeur 2', 95750, 0, 'gvjhb');
-INSERT INTO user (id, pseudo, nom, prenom, email, adresse, ville, cp, admin, password) VALUES (NULL, 'fez', 'valeur 2', 'valeur 2', 'gre@hotmail.fr', 'valeur 2', 'valeur 2', 95750, 0, 'gvjhb');
-INSERT INTO user (id, pseudo, nom, prenom, email, adresse, ville, cp, admin, password) VALUES (NULL, 'feza', 'valeur 2', 'valeur 2', 'evqs@hotmail.fr', 'valeur 2', 'valeur 2', 95750, 0, 'gvjhb');
-INSERT INTO user (id, pseudo, nom, prenom, email, adresse, ville, cp, admin, password) VALUES (NULL, 'azef', 'valeur 2', 'valeur 2', 'sgdf@hotmail.fr', 'valeur 2', 'valeur 2', 95750, 0, 'gvjhb');
-INSERT INTO user (id, pseudo, nom, prenom, email, adresse, ville, cp, admin, password) VALUES (NULL, 'vqvs', 'valeur 2', 'valeur 2', 'dso@hotmail.fr', 'valeur 2', 'valeur 2', 95750, 0, 'gvjhb');
-INSERT INTO user (id, pseudo, nom, prenom, email, adresse, ville, cp, admin, password) VALUES (NULL, 'dosqk', 'valeur 2', 'valeur 2', 'ejzi@hotmail.fr', 'valeur 2', 'valeur 2', 95750, 0, 'gvjhb');
+INSERT INTO user (id, pseudo, nom, prenom, email, adresse, ville, cp, admin, password) VALUES (NULL, 'oiu', 'valeur 2', 'valeur 2', 'nriqoeg@hotmail.fr', '0145784674', 'valeur 2', 'valeur 2', 95750, 0, 'gvjhb');
+INSERT INTO user (id, pseudo, nom, prenom, email, adresse, ville, cp, admin, password) VALUES (NULL, 'fez', 'valeur 2', 'valeur 2', 'gre@hotmail.fr', '0145784674', 'valeur 2', 'valeur 2', 95750, 0, 'gvjhb');
+INSERT INTO user (id, pseudo, nom, prenom, email, adresse, ville, cp, admin, password) VALUES (NULL, 'feza', 'valeur 2', 'valeur 2', 'evqs@hotmail.fr', '0145784674', 'valeur 2', 'valeur 2', 95750, 0, 'gvjhb');
+INSERT INTO user (id, pseudo, nom, prenom, email, adresse, ville, cp, admin, password) VALUES (NULL, 'azef', 'valeur 2', 'valeur 2', 'sgdf@hotmail.fr', '0145784674', 'valeur 2', 'valeur 2', 95750, 0, 'gvjhb');
+INSERT INTO user (id, pseudo, nom, prenom, email, adresse, ville, cp, admin, password) VALUES (NULL, 'vqvs', 'valeur 2', 'valeur 2', 'dso@hotmail.fr', '0145784674', 'valeur 2', 'valeur 2', 95750, 0, 'gvjhb');
+INSERT INTO user (id, pseudo, nom, prenom, email, adresse, ville, cp, admin, password) VALUES (NULL, 'dosqk', 'valeur 2', 'valeur 2', 'ejzi@hotmail.fr', '0145784674', 'valeur 2', 'valeur 2', 95750, 0, 'gvjhb');

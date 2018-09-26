@@ -22,9 +22,9 @@ foreach($users as $user){
 <p>Liste des utilisateurs</p>
 
 <?php var_dump($unuser);
-var_dump($userid[0]);
-if($userid[0] == $unuser->id){
-	echo '<td><a href="./edit_user_form.php?pseudo=$unuser->pseudo" class="button">Editer</a></td>';
+var_dump($userid);
+if($userid == $unuser->id){
+	echo '<td><a href="./edit_user_form.php?pseudo='.$unuser->pseudo.'" class="button">Editer</a></td>';
 }
 
 ?>

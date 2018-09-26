@@ -46,12 +46,12 @@
 
                 if ($i == 1) {
                   echo '<div class="carousel-item col-md-3 active">
-                    <img class="goer mx-auto d-block" src="'.$objet->image.'"  alt="slide '.$i.'"><a href="./show_object.php?id_objet='.$objet->id_objet.'">'.$objet->nom.'</a>
+                    <img class="goer mx-auto d-block" src="./images/'.$objet->image.'"  alt="slide '.$i.'"><a href="./show_object.php?id_objet='.$objet->id_objet.'">'.$objet->nom.'</a><p>'.$objet->prix.'€/mois </p>
                   </div>';
                 }
                 else {
                   echo '<div class="carousel-item col-md-3">
-                    <img class="goer mx-auto d-block" src="'.$objet->image.'"  alt="slide '.$i.'"><a href="./show_object.php?id_objet='.$objet->id_objet.'">'.$objet->nom.'</a>
+                    <img class="goer mx-auto d-block" src="./images/'.$objet->image.'"  alt="slide '.$i.'"><a href="./show_object.php?id_objet='.$objet->id_objet.'">'.$objet->nom.'</a><p>'.$objet->prix.'€/mois </p>
                   </div>';
                 }
                 $i++;
