@@ -12,7 +12,7 @@ $userid = getAuthUserId($conn);
 $zobjid = $_GET['id_objet'];
 $objid = trim($zobjid,"'");
 
-$newLocation = new Location(null, $objid, $userid[0], $_POST['debutloc'], $_POST['finloc']);
+$newLocation = new Location(null, $objid, $userid, $_POST['debutloc'], $_POST['finloc']);
 var_dump($newLocation);
 $newLocation->locToDB($conn);
 header("Location: ./Accueil.php");

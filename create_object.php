@@ -6,7 +6,7 @@ include("objet.php");
 include("objetController.php");
 
 $userid = getAuthUserId($conn);
-var_dump($userid[0]);
+var_dump($userid);
 
 $uploads_dir = "./images/";
 $uploads_base = basename($_FILES['image']['name']);
@@ -16,8 +16,8 @@ move_uploaded_file($_FILES["image"]["tmp_name"], $uploads_dir . $uploads_base);
 var_dump($upload_idk);
 
 
-var_dump(null, $_POST['nom'], $_POST['typeobjet'], $upload_idk, 1, $_POST['livraison'], $_POST['nombre'], $_POST['commentaire'], $userid[0]);
-$newObjet = new Objet(null, $_POST['nom'], $_POST['typeobjet'], $upload_idk, 1, $_POST['livraison'], $_POST['nombre'], $_POST['commentaire'], $userid[0]);
+var_dump(null, $_POST['nom'], $_POST['typeobjet'], $upload_idk, 1, $_POST['livraison'], $_POST['nombre'], $_POST['commentaire'], $userid);
+$newObjet = new Objet(null, $_POST['nom'], $_POST['typeobjet'], $upload_idk, 1, $_POST['livraison'], $_POST['nombre'], $_POST['commentaire'], $userid);
 $newObjet->objetToDB($conn);
 //redirectObjet();
 
