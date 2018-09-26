@@ -18,6 +18,7 @@ var_dump($upload_idk);
 
 var_dump(null, $_POST['nom'], $_POST['typeobjet'], $upload_idk, 1, $_POST['livraison'], $_POST['commentaire'], $userid);
 $newObjet = new Objet(null, $_POST['nom'], $_POST['typeobjet'], $upload_idk, 1, $_POST['livraison'], $_POST['commentaire'], $userid);
+
 $newObjet->objetToDB($conn);
 //redirectObjet();
 

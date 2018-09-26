@@ -11,7 +11,7 @@ include_once("objetController.php");
 $userid = getAuthUserId($conn);
 $zobjid = $_GET['id_objet'];
 $objid = trim($zobjid,"'");
-var_dump($userid);
+
 $newLocation = new Location(null, $objid, $userid, $_POST['debutloc'], $_POST['finloc']);
 var_dump($newLocation);
 $newLocation->locToDB($conn);
