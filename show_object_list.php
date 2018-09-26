@@ -35,7 +35,7 @@
 					?>	
 				</td>
 				<td><?php echo "<img src='".$objet->image."' width='200' height='200'  />"; ?></td>
-				<td><a href="./show_user.php?id='<?php echo $objet->id_objet; ?>'" class="button">Consulter/Modifier</a></td>
+				<td><a href="./show_object.php?id='<?php echo $objet->id_objet; ?>'" class="button">Consulter/Modifier</a></td>
 				<td><a href="#" class="button">Supprimer</a></td>
 			</tr>
 		<?php endforeach ?>

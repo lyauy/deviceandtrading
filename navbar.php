@@ -45,6 +45,7 @@
                       if($_SESSION['userCo']->admin)
                         echo "<a href='./admin.php' class='dropdown-item'><i class='fas fa-unlock-alt fa-fw'></i> Administration</a>";
                       ?>
+                        <a href='show_location_list.php' id='show_location_list' class='dropdown-item'><i class="fas fa-exchange-alt"></i></i> Mes locations</a>
                         <a href='show_object_list.php' id='show_object_list' class='dropdown-item'><i class="fas fa-laptop fa-fw"></i></i> Mes objets</a>
                         <a href='logout.php' id='Deconnexion' class='dropdown-item'><i class='fas fa-sign-out-alt fa-fw'></i> Se déconnecter</a>
                       </div>

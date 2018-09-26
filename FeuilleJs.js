@@ -1,5 +1,3 @@
-
-// Get the modal
 $('#carouselExample').on('slide.bs.carousel', function (e) {
 
     var $e = $(e.relatedTarget);
