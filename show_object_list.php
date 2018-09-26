@@ -37,6 +37,16 @@
 				<td><?php echo "<img src='".$objet->image."' width='200' height='200'  />"; ?></td>
 				<td><a href="./show_object.php?id='<?php echo $objet->id_objet; ?>'" class="button">Consulter/Modifier</a></td>
 				<td><a href="#" class="button">Supprimer</a></td>
+				<td><a href="./show_user.php?id='<?php echo $objet->id_objet; ?>'" class="button">Consulter/Modifier</a></td>
+				<td>
+					<?php $obj = serialize($objet);
+		            echo"
+		            <form method='POST' action='./deleteObjet.php'>
+		                <input type='hidden' name='objet' value = '$obj'/>
+		            	<button class='btn btn-outline-danger' type='submit'><i class='fas fa-trash-alt'></i> Supprimer</button>
+		            </form>";
+		            ?>
+		        </td>
 			</tr>
 		<?php endforeach ?>
 	</table>
