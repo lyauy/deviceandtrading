@@ -60,7 +60,7 @@
 	<div class="text-center">
 		<h3><?php echo $unobjet->typeobjet." n°".$unobjet->id_objet?></h3>
 		<br />
-	<?php echo "<img src='".$unobjet->image."' width='300' height='300'  />"; ?><br/><br/>
+	<?php echo "<img src='./images/".$unobjet->image."' width='300' height='300'  />"; ?><br/><br/>
 	</div>
 	<table class="table table-bordered">
 		<tr><td>Nom : <?php echo $unobjet->nom; ?></td></tr>
