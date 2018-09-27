@@ -48,7 +48,6 @@ class Location {
 	{
 		echo $this->id_location;
 		$req = $conn->exec("DELETE FROM location WHERE id_location = '$this->id_location'");
-		var_dump($req);
 	}
 }
 ?>

@@ -1,5 +1,4 @@
 <?php include_once($_SERVER['DOCUMENT_ROOT'] . '/Location/include.php');
-/*var_dump($user);*/
 
 function redirectObjet()
 {

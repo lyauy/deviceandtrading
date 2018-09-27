@@ -1,7 +1,6 @@
 <?php include_once($_SERVER['DOCUMENT_ROOT'] . '/Location/include.php');
 
 $userid = getAuthUserId($conn);
-var_dump($userid);
 
 if(isset($_POST['ok'])) 
 { 

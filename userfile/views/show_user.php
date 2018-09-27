@@ -2,7 +2,7 @@
 
 $userid = getAuthUserId($conn);
 $getPseudo = $_GET['pseudo'];
-var_dump($getPseudo);
+
 $req = $conn->query("SELECT * FROM user");
 $users = getUser($req);
 
@@ -19,8 +19,8 @@ foreach($users as $user){
 
 <p>Liste des utilisateurs</p>
 
-<?php var_dump($unuser);
-var_dump($userid);
+<?php 
+
 if($userid == $unuser->id){
 	echo '<td><a href="http://localhost/Location/userfile/views/edit_user_form.php?pseudo='.$unuser->pseudo.'" class="button">Editer</a></td>';
 }

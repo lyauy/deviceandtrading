@@ -30,7 +30,7 @@ function createUser($conn) {
 
 	$newUser = new User($_POST['pseudo'], $_POST['nom'], $_POST['prenom'], $_POST['email'], $_POST['tel'], $_POST['adresse'], $_POST['ville'], $_POST['cp'], 0, $_POST['password']);
 	$newUser->userToDB($conn);
-	header("Location: ./Accueil.php");
+	header("Location: http://localhost/Location/Accueil.php");
 }
 
 function editUser($conn) {

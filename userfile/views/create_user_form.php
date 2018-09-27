@@ -1,40 +1,3 @@
-<!-- 
-<form action="./create_user.php" method="post">
-  <fieldset>
-    <legend>Personal information:</legend>
-    Pseudo:<br>
-    <input type="text" name="pseudo">
-    <br><br>
-    Nom:<br>
-    <input type="text" name="nom">
-    <br>
-    Prénom:<br>
-    <input type="text" name="prenom">
-    <br><br>
-    Email:<br>
-    <input type="email" name="email">
-    <br>
-    Adresse:<br>
-    <input type="text" name="adresse">
-    <br><br>
-    Ville:<br>
-    <input type="text" name="ville">
-    <br>
-    Code postal:<br>
-    <input type="number" name="cp">
-    <br><br>
-    Mot de passe:<br>
-    <input type="password" name="password">
-    <br>
-    Confirmation:<br>
-    <input type="password" name="password">
-    <br><br>
-    <input type="submit" value="Submit">
-  </fieldset>
-</form>
- -->
-
-
 <!DOCTYPE html>
 <html lang="en">
 <?php 
@@ -42,7 +5,11 @@ include_once($_SERVER['DOCUMENT_ROOT'] . '/Location/front/head.php');
 include_once($_SERVER['DOCUMENT_ROOT'] . '/Location/include.php');
  ?>
 <body style="height:1500px;background-color: rgb(249, 249, 249);">
-<?php 
+<?php
+
+    $users = $conn->query("SELECT * FROM user");
+    $users = getUser($users);
+
     if(session_id() == '' || !isset($_SESSION)) {
       {
         session_start();
@@ -52,11 +19,11 @@ include_once($_SERVER['DOCUMENT_ROOT'] . '/Location/include.php');
  ?>
 
 <div class="container" style="margin-top:100px;" onsubmit="return validate()">
-  <h2>Nouvelle utilisateur</h2>
+  <h2>Nouvel utilisateur</h2>
   <form action="http://localhost/Location/userfile/actions/create_user.php" method="post">
     <div class="form-group">
-      <label for="email">Pseudo:</label>
-      <input type="text" class="form-control" name="pseudo" placeholder="Saisir le pseudo" required>
+      <label for="pseudo">Pseudo:</label>
+      <input id="pseudo" type="text" class="form-control" name="pseudo" placeholder="Saisir le pseudo" required>
     </div>
     <div class="form-group">
       <label for="nom">Nom:</label>
@@ -68,7 +35,7 @@ include_once($_SERVER['DOCUMENT_ROOT'] . '/Location/include.php');
     </div>
     <div class="form-group">
       <label for="email">Email:</label>
-      <input type="text" class="form-control" name="email" placeholder="Saisir l'email" required>
+      <input id="email" type="text" class="form-control" name="email" placeholder="Saisir l'email" required>
     </div>
     <div class="form-group">
       <label for="tel">Tel:</label>
@@ -95,7 +62,7 @@ include_once($_SERVER['DOCUMENT_ROOT'] . '/Location/include.php');
       <input type="password" class="form-control" placeholder="Confirmer" name="password" id="confirmation" required>
     </div>
     <a href="http://localhost/Location/Accueil.php" class="btn btn-primary float-left"><i class="fas fa-undo-alt"></i> Retour</a>
-    <button type="submit" class="btn btn-primary float-right"><i class="fas fa-check"></i> Valider</button>
+    <button id="submit" type="submit" class="btn btn-primary float-right"><i class="fas fa-check"></i> Valider</button>
   </form>
 </div>
 
@@ -125,7 +92,10 @@ include_once($_SERVER['DOCUMENT_ROOT'] . '/Location/include.php');
                 alert("Les mots de passe ne correspondent pas !");
                 return false;
             }
-        }
+      }
+
+      
+
   </script>
 
 </body>

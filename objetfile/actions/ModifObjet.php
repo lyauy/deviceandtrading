@@ -11,7 +11,6 @@
       }
   }
  $objetSelect = unserialize($_POST['obj']);
- var_dump($objetSelect);
  include_once($_SERVER['DOCUMENT_ROOT'] . '/Location/navbar.php') 
  ?>
 

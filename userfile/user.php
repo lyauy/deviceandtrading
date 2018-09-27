@@ -53,7 +53,6 @@ class User {
 
 	public function saveToDB($conn)
 	{
-		var_dump($this->email);
 		$req = $conn->exec("UPDATE user SET pseudo = '$this->pseudo', nom = '$this->nom', prenom = '$this->prenom', email = '$this->email', tel = '$this->tel', adresse = '$this->adresse', ville = '$this->ville', cp = '$this->cp', admin = '$this->admin', password = '$this->password' WHERE email = '$this->email'");
 	}
 
@@ -61,7 +60,6 @@ class User {
 	{
 		echo $this->email;
 		$req = $conn->exec("DELETE FROM user WHERE email = '$this->email'");
-		var_dump($req);
 	}
 	
 }

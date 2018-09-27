@@ -1,7 +1,6 @@
 <?php include_once($_SERVER['DOCUMENT_ROOT'] . '/Location/include.php');
 
 $test = new Objet(2, "mdr", "eagregege", 1, 1, 20, 1, "defze", 35);
-var_dump($test);
 
 $test->objetToDB($conn);
 
@@ -10,7 +9,5 @@ $sth->setFetchMode(PDO::FETCH_CLASS, 'Objet');
 $objets = $sth->fetch();
 
 echo $objets->nom;
-
-var_dump($objets);
 
 ?>

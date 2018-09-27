@@ -36,7 +36,6 @@ include_once($_SERVER['DOCUMENT_ROOT'] . '/Location/include.php');
 			<td>Fin de la location</td>
 			<td>Prix total</td>
 			<td>Action</td>
-			<td>Action</td>
 		</tr>
 		    </thead>
 		    <tbody>
@@ -58,12 +57,6 @@ include_once($_SERVER['DOCUMENT_ROOT'] . '/Location/include.php');
 						<td><?php echo $location->debutloc; ?></td>
 						<td><?php echo $location->finloc; ?></td>
 						<td><?php echo $location->total; ?>€</td>
-						<td>
-							<?php $obj = serialize($objet);
-				            echo"<form method='POST' action='http://localhost/Location/userfile/views/ModifUser.php'>
-					            <input type='hidden' name='user' value = '$obj'/>
-					            <button type='submit' class='btn btn-outline-warning'><i class='fas fa-exchange-alt'></i> Modifier</button></td>
-				            </form>";?>
 						<td>
 							<?php $location = serialize($location);
 				            echo"

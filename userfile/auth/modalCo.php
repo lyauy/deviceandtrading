@@ -20,7 +20,7 @@
 
     <div class="container" style="background-color:#f1f1f1">
       <button type="button" onclick="document.getElementById('id01').style.display='none'" class="button cancelbtn">Cancel</button>
-      <span class="psw"><a href="http://localhost/Location/userfile/views/create_user_form.php">S'inscrire</a> / <a href="#">Mot de passe oublié ?</a></span>
+      <span class="psw">Nouvel utilisateur ? <a href="http://localhost/Location/userfile/views/create_user_form.php">S'inscrire</a></span>
     </div>
   </form>
 </div>

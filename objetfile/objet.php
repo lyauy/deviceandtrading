@@ -52,7 +52,6 @@ class Objet {
 
 	public function objetsaveToDB($conn)
 	{
-		var_dump($this->email);
 		$req = $conn->exec("UPDATE objet SET nom = '$this->nom', typeobjet = '$this->typeobjet', image = '$this->image', prix = '$this->prix', disponibilite = '$this->disponibilite', livraison = '$this->livraison', id_user = '$this->id_user', commentaire = '$this->commentaire' WHERE id_objet = '$this->id_objet'");
 		
 		header("Location: http://localhost/Location/Accueil.php");
@@ -62,7 +61,6 @@ class Objet {
 	{
 		echo $this->id_objet;
 		$req = $conn->exec("DELETE FROM objet WHERE id_objet = '$this->id_objet'");
-		var_dump($req);
 	}
 }
 ?>
