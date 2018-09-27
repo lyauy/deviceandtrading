@@ -18,8 +18,15 @@ if($user)
   $_SESSION['userCo'] = $user;
   header('Location: http://localhost/Location/Accueil.php');
 }
-else
-  echo "Non connecté";
+else {
+
+  echo ("<script LANGUAGE='JavaScript'>
+    window.alert('pute');
+    window.location.href=' http://localhost/Location/Accueil.php';
+    </script>");
+
+
+}
 
 /*  echo "<br/>";
 echo gettype($user);

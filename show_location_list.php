@@ -85,10 +85,10 @@
 					            <button type='submit' class='btn btn-outline-warning'><i class='fas fa-exchange-alt'></i> Modifier</button></td>
 				            </form>";?>
 						<td>
-							<?php $obj = serialize($objet);
+							<?php $location = serialize($location);
 				            echo"
-				            <form method='POST' action='./deleteObjet.php'>
-				                <input type='hidden' name='objet' value = '$obj'/>
+				            <form method='POST' action='./deleteLocation.php'>
+				                <input type='hidden' name='location' value = '$location'/>
 				            	<button class='btn btn-outline-danger' type='submit'><i class='fas fa-trash-alt'></i> Supprimer</button>
 				            </form>";
 				            ?>

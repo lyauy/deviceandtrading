@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md bg-white navbar-white">
     <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
-      <a class="navbar-nav mx-auto nav-link" href="./Accueil.php">NomWebSite</a>
+      <a class="navbar-nav mx-auto nav-link" href="./Accueil.php">we are GOERG</a>
     </div>
     <div class="mx-auto order-0">
          <ul class="navbar-nav mr-auto">

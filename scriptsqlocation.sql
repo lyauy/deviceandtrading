@@ -27,8 +27,8 @@ CREATE TABLE IF NOT EXISTS `location` (
   PRIMARY KEY (`id_location`),
   KEY `FK_id_objet` (`id_objet`),
   KEY `FK_id_user` (`id_user`),
-  CONSTRAINT `FK_id_objet` FOREIGN KEY (`id_objet`) REFERENCES `objet` (`id_objet`),
-  CONSTRAINT `FK_id_user` FOREIGN KEY (`id_user`) REFERENCES `user` (`id`)
+  CONSTRAINT `FK_id_objet` FOREIGN KEY (`id_objet`) REFERENCES `objet` (`id_objet`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_id_user` FOREIGN KEY (`id_user`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- Les données exportées n'étaient pas sélectionnées.
@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS `objet` (
   `commentaire` longtext NOT NULL,
   PRIMARY KEY (`id_objet`),
   KEY `FK_id_objet_to_id_user` (`id_user`),
-  CONSTRAINT `FK_id_objet_to_id_user` FOREIGN KEY (`id_user`) REFERENCES `user` (`id`)
+  CONSTRAINT `FK_id_objet_to_id_user` FOREIGN KEY (`id_user`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- Les données exportées n'étaient pas sélectionnées.
