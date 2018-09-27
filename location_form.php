@@ -49,10 +49,10 @@ var_dump($unuser);
   <fieldset>
     <legend>Choisissez le début et la fin de votre location:</legend>
     Début de location:
-    <input id="debutloc" type="date" name="debutloc" max='2000-13-13' value="" onclick="getDate(this.value)" onkeyup="getDate(this.value)">
+    <input id="debutloc" type="date" name="debutloc" max='2000-13-13' value="" onclick="this.value" onkeypress="this.value">
     <br>
     Fin de location:
-    <input id="finloc" type="date" name="finloc" max='2000-13-13' value="" onclick="getDate(this.value)" onkeyup="getDate(this.value)">
+    <input id="finloc" type="date" name="finloc" max='2000-13-13' value="" onclick="this.value" onkeypress="this.value">
     <br>
     Prix total:
     <input id="total" type="number" name="total" value="total" readonly>€
@@ -65,7 +65,7 @@ var_dump($unuser);
 
 <script type="text/javascript">
 
-    var prixjour = '<?php echo $unobjet->prix / 30.5 ?>';
+    var prixjour = '<?php echo $unobjet->prix / 31 ?>';
     var daysxprixjour;
 
     var today = new Date();
@@ -88,28 +88,57 @@ var_dump($unuser);
     document.getElementById("debutloc").value = today;
     document.getElementById("finloc").value = today;
 
-    function getDate(clicked_date) {
-        console.log(clicked_date);
-        return clicked_date;
+    debutloc = document.getElementById("debutloc");
+    finloc = document.getElementById("finloc");
+
+    function parseDate(input) {
+        
+      var parts = input.match(/(\d+)/g);
+      // new Date(year, month [, date [, hours[, minutes[, seconds[, ms]]]]])
+      return new Date(parts[0], parts[1]-1, parts[2]); // months are 0-based
     }
 
-    var date1 = new Date("7/13/2010");
-    var date2 = new Date("9/19/2010");
+    debutloc.onclick = function(date) {
+        calculatedateprix();
+    }
 
-    if(date1 < date2){
+    finloc.onclick = function(date) {
 
-        var timeDiff = Math.abs(date2.getTime() - date1.getTime());
+       calculatedateprix();
+    }
+
+    debut.onkeypress = function(date) {
+
+       calculatedateprix();
+    }
+
+    finloc.onkeypress = function(date) {
+
+       calculatedateprix();
+    }
+
+    
+    function calculatedateprix() {
+
+        var datex = document.querySelector('#debutloc').value;
+        var datey = document.querySelector('#finloc').value;
+        console.log(datex, 'DATEX', datey, 'DAETY')
+        if(datex < datey){
+
+        var timeDiff = Math.abs(parseDate(datey) - parseDate(datex));
         var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24)); 
 
         daysxprixjour = Math.round((prixjour * diffDays) * 100) / 100;
-    }
-    else {
+
+        } else {
+
+            daysxprixjour = 0;
+        }
         
-        daysxprixjour = 0;
+            document.getElementById('total').value = daysxprixjour;
     }
 
 
-    document.getElementById('total').value = daysxprixjour;
 
 
 </script>

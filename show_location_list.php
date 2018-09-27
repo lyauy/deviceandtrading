@@ -54,6 +54,7 @@
 			<td>Image</td>
 			<td>Début de la location</td>
 			<td>Fin de la location</td>
+			<td>Prix total</td>
 			<td>Action</td>
 			<td>Action</td>
 		</tr>
@@ -76,6 +77,7 @@
 						<td><?php echo "<img src='./images/".$objet->image."' width='200' height='200'  />"; ?></td>
 						<td><?php echo $location->debutloc; ?></td>
 						<td><?php echo $location->finloc; ?></td>
+						<td><?php echo $location->total; ?>€</td>
 						<td>
 							<?php $obj = serialize($objet);
 				            echo"<form method='POST' action='./ModifUser.php'>
