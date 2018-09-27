@@ -74,8 +74,8 @@
 						<td><?php echo $objet->commentaire; ?></td>
 						<td>
 							<?php $obj = serialize($objet);
-				            echo"<form method='POST' action='./ModifUser.php'>
-					            <input type='hidden' name='user' value = '$obj'/>
+				            echo"<form method='POST' action='./ModifObjet.php'>
+					            <input type='hidden' name='obj' value = '$obj'/>
 					            <button type='submit' class='btn btn-outline-warning'><i class='fas fa-exchange-alt'></i> Modifier</button></td>
 				            </form>";?>
 						<td>

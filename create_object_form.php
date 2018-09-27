@@ -55,7 +55,7 @@
  ?>
 
 <div class="container" style="margin-top:100px;">
-  <h2>Nouvelle Objet</h2>
+  <h2>Nouvel Objet</h2>
   <div id="form_create_object">
   <form id="create_objet" action="./create_object.php" method="post" enctype="multipart/form-data">
     <fieldset>
@@ -74,12 +74,12 @@
     <div class="form-group">
         <label for="image">Image:</label>
         <div class="custom-file">
-            <input type="file" id="image" name="image" accept="image/png, image/jpeg, image/jpg" />
+            <input type="file" id="image" name="image" accept="image/png, image/jpeg, image/jpg" / required>
             <label class="custom-file-label" for="image">Choisir l'image</label>
         </div>
     </div>
     <div class="form-group">
-      <label for="prix">Prix:</label>
+      <label for="prix">Prix <i class="fas fa-euro-sign"></i> (au mois):</label>
       <input type="number" class="form-control" id="prix" name="prix" placeholder="Saisir le prix par mois" required>
     </div>
     <div class="form-group">
@@ -98,8 +98,6 @@
     <button name="ok" type="submit" value="submit" class="btn btn-primary float-right"><i class="fas fa-check"></i> Valider</button>
   </fieldset>
   </form>
-<!--   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-     <script type="text/javascript" src="postjson.js"> </script> -->
 </div>
 </div>
 
@@ -118,7 +116,7 @@
                 //replace the "Choose a file" label
                 $(this).next('.custom-file-label').html(fileName);
             })
-        </script>
+  </script>
 
 </body>
 </html>

@@ -47,12 +47,15 @@ class Objet {
 	{
 		$req = $conn->exec("INSERT INTO objet(nom, typeobjet, image, prix, disponibilite, livraison, id_user, commentaire) 
 			VALUES('$this->nom', '$this->typeobjet', '$this->image', '$this->prix', '$this->disponibilite', '$this->livraison', '$this->id_user', '$this->commentaire')");
+		redirectObjet();
 	}
 
 	public function objetsaveToDB($conn)
 	{
 		var_dump($this->email);
 		$req = $conn->exec("UPDATE objet SET nom = '$this->nom', typeobjet = '$this->typeobjet', image = '$this->image', prix = '$this->prix', disponibilite = '$this->disponibilite', livraison = '$this->livraison', id_user = '$this->id_user', commentaire = '$this->commentaire' WHERE id_objet = '$this->id_objet'");
+		
+		header("Location: ./Accueil.php");
 	}
 
 	public function deleteObjet($conn) 
