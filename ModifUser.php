@@ -35,7 +35,7 @@
   ?>
     <div class="form-group">
       <label for="email">Pseudo:</label>
-      <input type="text" class="form-control" name="pseudo" value="<?php echo $user->pseudo ?>">
+      <input type="text" class="form-control" name="pseudo" value="<?php echo $user->pseudo ?>" readonly>
     </div>
     <div class="form-group">
       <label for="nom">Nom:</label>
@@ -47,7 +47,7 @@
     </div>
     <div class="form-group">
       <label for="email">Email:</label>
-      <input type="text" class="form-control" name="email" value="<?php echo $user->email ?>">
+      <input type="text" class="form-control" name="email" value="<?php echo $user->email ?>" readonly>
     </div>
     <div class="form-group">
       <label for="tel">Tel:</label>

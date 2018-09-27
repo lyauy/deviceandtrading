@@ -80,6 +80,7 @@
 			} ?>
 		</td></tr>
 		<tr><td>Commentaire : <?php echo $unobjet->commentaire; ?></td></tr>
+		<tr><td>Prix : <?php echo $unobjet->prix.' €/mois'; ?></td></tr>
 		<tr><td>Propriété de : <?php echo $unuser->pseudo ; ?></td></tr>
 			<?php 
 			if($unobjet->id_user != $userid ) {

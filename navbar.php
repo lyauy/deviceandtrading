@@ -19,7 +19,7 @@
             <li class="nav-item">
                <?php 
                   if(isset($_SESSION['userCo'])) {
-                    echo "<a href='create_object_form.php' id='object' class='nav-link'>Louer</a>";
+                    echo "<a href='create_object_form.php' id='object' class='nav-link'>Prêter</a>";
                   }
                 ?>
             </li>
