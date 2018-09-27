@@ -30,74 +30,38 @@
 
 <?php include_once('navbar.php') ?>
 
-<div class="container" style="margin-top:350px;">
+<div class="container" style="margin-top:100px;">
 
-  <h3>
-    <p>
-      Liste des dernières nouveautés :
-    </p>
-  </h3>
-  <div class="row"> 
-    <div id="carouselExample" class="carousel slide" data-ride="carousel" data-interval="9000">
-        <div class="carousel-inner row w-100 mx-auto" role="listbox">
-          <?php 
-              $i = 1; 
-              foreach ($objets as $objet) {
-
-                if ($i == 1) {
-                  echo '<div class="carousel-item col-md-3 active">
-                    <img class="imgSlide mx-auto d-block" src="./images/'.$objet->image.'"  alt="slide '.$i.'"><a href="./show_object.php?id_objet='.$objet->id_objet.'">'.$objet->nom.'</a><p>'.$objet->prix.'€/mois </p>
-                  </div>';
-                }
-                else {
-                  echo '<div class="carousel-item col-md-3">
-                    <img class="imgSlide mx-auto d-block" src="./images/'.$objet->image.'"  alt="slide '.$i.'"><a href="./show_object.php?id_objet='.$objet->id_objet.'">'.$objet->nom.'</a><p>'.$objet->prix.'€/mois </p>
-                  </div>';
-                }
-                $i++;
-              }
-          ?>
-          <div class="carousel-item col-md-3">
-                <img class="imgSlide mx-auto d-block" src="//placehold.it/600x400?text=3" alt="slide 3">
+              <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+              <div class="carousel-item active">
+                <img class="d-block img-fluid" src="http://placehold.it/1500x700" alt="First slide">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block img-fluid" src="http://placehold.it/1500x700" alt="Second slide">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block img-fluid" src="http://placehold.it/1500x700" alt="Third slide">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5>First slide label</h5>
+                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                  </div>
+              </div>
             </div>
-            <div class="carousel-item col-md-3">
-                <img class="imgSlide mx-auto d-block" src="//placehold.it/600x400?text=4" alt="slide 4" width="500" height="600">
-            </div>
-            <div class="carousel-item col-md-3">
-                <img class="imgSlide mx-auto d-block" src="//placehold.it/600x400?text=5" alt="slide 5" width="500" height="600">
-            </div>
-            <div class="carousel-item col-md-3">
-                <img class="imgSlide mx-auto d-block" src="//placehold.it/600x400?text=6" alt="slide 6" width="500" height="600">
-            </div>
-            <!--<div class="carousel-item col-md-3 active">
-                <img class="img-fluid mx-auto d-block" src="//placehold.it/600x400/000/fff?text=1" alt="slide 1">
-            </div>
-            <div class="carousel-item col-md-3">
-                <img class="img-fluid mx-auto d-block" src="//placehold.it/600x400?text=2" alt="slide 2">
-            </div>
-            <div class="carousel-item col-md-3">
-                <img class="img-fluid mx-auto d-block" src="//placehold.it/600x400?text=3" alt="slide 3">
-            </div>
-            <div class="carousel-item col-md-3">
-                <img class="img-fluid mx-auto d-block" src="//placehold.it/600x400?text=4" alt="slide 4">
-            </div>
-            <div class="carousel-item col-md-3">
-                <img class="img-fluid mx-auto d-block" src="//placehold.it/600x400?text=5" alt="slide 5">
-            </div>
-            <div class="carousel-item col-md-3">
-                <img class="img-fluid mx-auto d-block" src="//placehold.it/600x400?text=6" alt="slide 6">
-            </div>
-            <div class="carousel-item col-md-3">
-                <img class="img-fluid mx-auto d-block" src="//placehold.it/600x400?text=7" alt="slide 7">
-            </div>
-            <div class="carousel-item col-md-3">
-<<<<<<< HEAD
-                <img class="img-fluid mx-auto d-block" src="//placehold.it/600x400?text=8" alt="slide 7">
-            </div>-->
-<!--                 <img class="img-fluid mx-auto d-block" src="//placehold.it/600x400?text=8" alt="slide 8">
-              <img class="img-fluid mx-auto d-block" src="//placehold.it/600x400?text=8" alt="slide 8">
->>>>>>> d4b39ed405e84dd756b506021bd31c52794a4b73
-            </div> -->
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
 
         </div>
         <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
@@ -109,7 +73,7 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
-  </div>
+
 <?php
   include_once('modalCo.php');
 ?>

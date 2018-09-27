@@ -8,7 +8,7 @@
                 <a class="nav-link" href="//codeply.com">Codeply</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link" href="./shopList.php">Shop</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Link</a>
@@ -19,7 +19,7 @@
             <li class="nav-item">
                <?php 
                   if(isset($_SESSION['userCo'])) {
-                    echo "<a href='create_object_form.php' id='object' class='nav-link'>Prêter</a>";
+                    echo "<a href='create_object_form.php' id='object' class='nav-link'>Louer</a>";
                   }
                 ?>
             </li>
