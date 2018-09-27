@@ -1,15 +1,35 @@
 <!doctype html>
 <html lang="en">
-<?php 
-include_once($_SERVER['DOCUMENT_ROOT'] . '/Location/front/head.php');
-include_once($_SERVER['DOCUMENT_ROOT'] . '/Location/include.php');
- ?>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  	<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+
+  	<link rel="stylesheet" type="text/css" href="./FeuilleStyle.css">
+
+  </head>
   <body style="height:1500px;background-color: rgb(249, 249, 249);">
 <?php 
 
+	include_once('ConnexionBDD.php');
+	include_once('user.php');
+	include_once("userController.php");
+	include_once('location.php');
+	include_once("locationController.php");
+	include_once('objet.php');
+	include_once("objetController.php");
+
 	$userid = getAuthUserId($conn);
+	var_dump($userid);
 	$req = $conn->query("SELECT * FROM location WHERE id_user = '$userid'");
 	$locations = getLocation($req);	
+	var_dump($locations);
 
     if(session_id() == '' || !isset($_SESSION)) {
       {
@@ -18,7 +38,7 @@ include_once($_SERVER['DOCUMENT_ROOT'] . '/Location/include.php');
   }
 ?>
 
-  <?php include_once($_SERVER['DOCUMENT_ROOT'] . '/Location/navbar.php') ?>
+  <?php include_once('navbar.php') ?>
     <div class="" <div class="container" style="margin-top:100px;">
 		<?php 
 			$users = $conn->query("SELECT * FROM user");
@@ -54,20 +74,20 @@ include_once($_SERVER['DOCUMENT_ROOT'] . '/Location/include.php');
 						<td><?php echo $objet->nom; ?></td>
 						<td><?php echo $objet->typeobjet; ?></td>
 						<td><?php echo $user->pseudo; ?></td>
-						<td><?php echo "<img src='http://localhost/Location/images/".$objet->image."' width='200' height='200'  />"; ?></td>
+						<td><?php echo "<img src='./images/".$objet->image."' width='200' height='200'  />"; ?></td>
 						<td><?php echo $location->debutloc; ?></td>
 						<td><?php echo $location->finloc; ?></td>
 						<td><?php echo $location->total; ?>€</td>
 						<td>
 							<?php $obj = serialize($objet);
-				            echo"<form method='POST' action='http://localhost/Location/userfile/views/ModifUser.php'>
+				            echo"<form method='POST' action='./ModifUser.php'>
 					            <input type='hidden' name='user' value = '$obj'/>
 					            <button type='submit' class='btn btn-outline-warning'><i class='fas fa-exchange-alt'></i> Modifier</button></td>
 				            </form>";?>
 						<td>
 							<?php $location = serialize($location);
 				            echo"
-				            <form method='POST' action='http://localhost/Location/locationfile/actions/deleteLocation.php'>
+				            <form method='POST' action='./deleteLocation.php'>
 				                <input type='hidden' name='location' value = '$location'/>
 				            	<button class='btn btn-outline-danger' type='submit'><i class='fas fa-trash-alt'></i> Supprimer</button>
 				            </form>";
@@ -88,7 +108,7 @@ include_once($_SERVER['DOCUMENT_ROOT'] . '/Location/include.php');
  
   <script type="text/javascript" src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 
-  <script type="text/javascript" src="http://localhost/Location/front/FeuilleJs.js"></script>
+  <script type="text/javascript" src="./FeuilleJs.js"></script>
 
   <script>
     $(document).ready(function() {

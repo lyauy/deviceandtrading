@@ -1,4 +1,11 @@
-<?php include_once($_SERVER['DOCUMENT_ROOT'] . '/Location/include.php');
+<?php
+include_once('ConnexionBDD.php');
+include_once('user.php');
+include_once("userController.php");
+include_once('location.php');
+include_once("locationController.php");
+include_once('objet.php');
+include_once("objetController.php");
 
 $userid = getAuthUserId($conn); 
 if(isset($_SESSION)){
@@ -38,7 +45,7 @@ var_dump($unuser);
 
 <div id="form_location_objet">
 <p>Louer </p>
-<form action="http://localhost/Location/locationfile/actions/create_location.php?id_objet='<?php echo $objid ?>'" method="post">
+<form action="./create_location.php?id_objet='<?php echo $objid ?>'" method="post">
   <fieldset>
     <legend>Choisissez le début et la fin de votre location:</legend>
     Début de location:

@@ -24,7 +24,6 @@ CREATE TABLE IF NOT EXISTS `location` (
   `id_user` int(11) NOT NULL,
   `debutloc` date NOT NULL,
   `finloc` date NOT NULL,
-  `total` int(10) NOT NULL,
   PRIMARY KEY (`id_location`),
   KEY `FK_id_objet` (`id_objet`),
   KEY `FK_id_user` (`id_user`),

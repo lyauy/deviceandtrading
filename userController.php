@@ -1,4 +1,8 @@
-<?php include_once($_SERVER['DOCUMENT_ROOT'] . '/Location/include.php');
+<?php
+
+include_once('ConnexionBDD.php');
+include_once('user.php');
+/*var_dump($user);*/
 
 function redirectUser()
 {
@@ -39,13 +43,13 @@ function editUser($conn) {
 	$newUser->saveToDB($conn);
 	echo ("<script LANGUAGE='JavaScript'>
     window.alert('Succesfully Updated');
-    window.location.href='http://localhost/Location/Accueil.php';
+    window.location.href='./Accueil.php';
     </script>");
-    header("Location: http://localhost/Location/userfile/views/admin.php");
+    header("Location: ./admin.php");
 }
 
 function DeleteUser($user){
-	header("Location: http://localhost/Location/Accueil");
+	header("Location: ./Accueil");
 	die();
 }
 ?>

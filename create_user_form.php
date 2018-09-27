@@ -37,23 +37,30 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<?php 
-include_once($_SERVER['DOCUMENT_ROOT'] . '/Location/front/head.php');
-include_once($_SERVER['DOCUMENT_ROOT'] . '/Location/include.php');
- ?>
+<head>
+  <title>Création d'un nouvel utilisateur</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="./FeuilleStyle.css">
+
+</head>
 <body style="height:1500px;background-color: rgb(249, 249, 249);">
 <?php 
+    include_once('user.php');
     if(session_id() == '' || !isset($_SESSION)) {
       {
         session_start();
       }
   }
- include_once($_SERVER['DOCUMENT_ROOT'] . '/Location/navbar.php') 
+ include_once('navbar.php') 
  ?>
 
 <div class="container" style="margin-top:100px;" onsubmit="return validate()">
   <h2>Nouvelle utilisateur</h2>
-  <form action="http://localhost/Location/userfile/actions/create_user.php" method="post">
+  <form action="./create_user.php" method="post">
     <div class="form-group">
       <label for="email">Pseudo:</label>
       <input type="text" class="form-control" name="pseudo" placeholder="Saisir le pseudo" required>
@@ -94,13 +101,13 @@ include_once($_SERVER['DOCUMENT_ROOT'] . '/Location/include.php');
       <label for="password">Confirmation:</label>
       <input type="password" class="form-control" placeholder="Confirmer" name="password" id="confirmation" required>
     </div>
-    <a href="http://localhost/Location/Accueil.php" class="btn btn-primary float-left"><i class="fas fa-undo-alt"></i> Retour</a>
+    <a href="./Accueil.php" class="btn btn-primary float-left"><i class="fas fa-undo-alt"></i> Retour</a>
     <button type="submit" class="btn btn-primary float-right"><i class="fas fa-check"></i> Valider</button>
   </form>
 </div>
 
 <?php
-  include_once($_SERVER['DOCUMENT_ROOT'] . '/Location/userfile/auth/modalCo.php');
+  include_once('modalCo.php');
 ?>
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -109,7 +116,7 @@ include_once($_SERVER['DOCUMENT_ROOT'] . '/Location/include.php');
  
   <script type="text/javascript" src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 
-  <script type="text/javascript" src="http://localhost/Location/front/FeuilleJs.js"></script>
+  <script type="text/javascript" src="./FeuilleJs.js"></script>
 
   <script>
       function validate()

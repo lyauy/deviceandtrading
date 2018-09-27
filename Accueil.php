@@ -60,6 +60,34 @@ include_once($_SERVER['DOCUMENT_ROOT'] . '/Location/include.php');
             </a>
         </div>
     </div>
+    <br><br><br>
+    <h2 align="center"> Les dernières nouveautés </h2><br><br><br><hr><br><br><br>
+      <div class="col-lg-9" style="margin-left:12.5%;">
+        <div class="row">
+        <?php foreach ($objets as $objet) {
+                    echo "            
+                    <div class='col-lg-4 col-md-6 mb-4'>
+                      <div class='card h-100'>
+                        <a href='http://localhost/Location/objetfile/views/show_object.php?id_objet=$objet->id_objet'><img height='250' class='card-img-top' src='http://localhost/Location/images/$objet->image'></a>
+                        <div class='card-body text-center'>
+                          <h4 class='card-title'>
+                          $objet->nom
+                          </h4>
+                          <h5>$objet->prix € / mois</h5>
+                          <hr>";
+                          if ($objet->commentaire == '')
+                          echo"<p class='card-text'><em>Aucun commentaire</em></p>
+                        </div>
+                      </div>
+                    </div>";
+                          else
+                          echo"<p class='card-text'><em>$objet->commentaire</em></p>
+                        </div>
+                      </div>
+                    </div>";
+                    } ?>
+        </div>
+      </div>
 
 <?php
   include_once($_SERVER['DOCUMENT_ROOT'] . '/Location/userfile/auth/modalCo.php');

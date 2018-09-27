@@ -1,6 +1,6 @@
 <div id="id01" class="modal">
   
-  <form class="modal-content animate" action="http://localhost/Location/userfile/actions/action_page.php" method="post">
+  <form class="modal-content animate" action="./action_page.php" method="post">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
     </div>
@@ -20,7 +20,7 @@
 
     <div class="container" style="background-color:#f1f1f1">
       <button type="button" onclick="document.getElementById('id01').style.display='none'" class="button cancelbtn">Cancel</button>
-      <span class="psw"><a href="http://localhost/Location/userfile/views/create_user_form.php">S'inscrire</a> / <a href="#">Mot de passe oublié ?</a></span>
+      <span class="psw"><a href="./create_user_form.php">S'inscrire</a> / <a href="#">Mot de passe oublié ?</a></span>
     </div>
   </form>
 </div>
