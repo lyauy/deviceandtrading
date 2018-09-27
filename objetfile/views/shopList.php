@@ -26,7 +26,7 @@ include_once($_SERVER['DOCUMENT_ROOT'] . '/Location/include.php');
 
         <div class="col-lg-3">
 
-          <h1 class="my-4">Shop Name</h1>
+          <h1 class="my-4">Locations</h1>
           <div class="list-group">
             <a href="http://localhost/Location/objetfile/views/shopList.php" class="list-group-item">Tout</a>
             <a href="http://localhost/Location/objetfile/views/shopListpc.php" class="list-group-item">Ordinateur portable</a>

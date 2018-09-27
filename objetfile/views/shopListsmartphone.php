@@ -26,7 +26,7 @@ include_once($_SERVER['DOCUMENT_ROOT'] . '/Location/include.php');
 
         <div class="col-lg-3">
 
-          <h1 class="my-4">Shop Name</h1>
+          <h1 class="my-4">Locations</h1>
           <div class="list-group">
             <a href="http://localhost/Location/objetfile/views/shopList.php" class="list-group-item">Tout</a>
             <a href="http://localhost/Location/objetfile/views/shopListpc.php" class="list-group-item">Ordinateur portable</a>
@@ -42,28 +42,12 @@ include_once($_SERVER['DOCUMENT_ROOT'] . '/Location/include.php');
           <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
             <ol class="carousel-indicators">
               <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
             </ol>
             <div class="carousel-inner" role="listbox">
               <div class="carousel-item active">
-                <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="First slide">
-              </div>
-              <div class="carousel-item">
-                <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Second slide">
-              </div>
-              <div class="carousel-item">
-                <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Third slide">
+                <img class="d-block img-fluid" src="http://localhost/Location/image_site/smartphone.jpg" alt="First slide">
               </div>
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
           </div>
 
           <div class="row">
@@ -74,27 +58,28 @@ include_once($_SERVER['DOCUMENT_ROOT'] . '/Location/include.php');
 
 
             <?php foreach ($objets as $objet) {
-              if($objet->typeobjet == 'smartphone')
-            echo "            
-            <div class='col-lg-4 col-md-6 mb-4'>
-              <div class='card h-100'>
-                <a href='http://localhost/Location/objetfile/views/show_object.php?id_objet=$objet->id_objet'><img height='250' class='card-img-top' src='http://localhost/Location/images/$objet->image'></a>
-                <div class='card-body text-center'>
-                  <h4 class='card-title'>
-                  $objet->nom
-                  </h4>
-                  <h5>$objet->prix € / mois</h5>
-                  <hr>";
-                  if ($objet->commentaire == '')
-                  echo"<p class='card-text'><em>Aucun commentaire</em></p>
-                </div>
-              </div>
-            </div>";
-                  else
-                  echo"<p class='card-text'><em>$objet->commentaire</em></p>
-                </div>
-              </div>
-            </div>";
+              if($objet->typeobjet == 'smartphone') {
+                echo "            
+                <div class='col-lg-4 col-md-6 mb-4'>
+                  <div class='card h-100'>
+                    <a href='http://localhost/Location/objetfile/views/show_object.php?id_objet=$objet->id_objet'><img height='250' class='card-img-top' src='http://localhost/Location/images/$objet->image'></a>
+                    <div class='card-body text-center'>
+                      <h4 class='card-title'>
+                      $objet->nom
+                      </h4>
+                      <h5>$objet->prix € / mois</h5>
+                      <hr>";
+                      if ($objet->commentaire == '')
+                      echo"<p class='card-text'><em>Aucun commentaire</em></p>
+                    </div>
+                  </div>
+                </div>";
+                      else
+                      echo"<p class='card-text'><em>$objet->commentaire</em></p>
+                    </div>
+                  </div>
+                </div>";
+              }
             } ?>
 
           </div>
