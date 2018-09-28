@@ -32,11 +32,11 @@ include_once($_SERVER['DOCUMENT_ROOT'] . '/Location/include.php');
     </div>
     <div class="form-group">
       <label for="nom">Nom:</label>
-      <input type="text" class="form-control" name="nom" value="<?php echo $user->nom ?>">
+      <input type="text" class="form-control" name="nom" value="<?php echo $user->nom ?>" required>
     </div>
     <div class="form-group">
       <label for="prenom">Prenom:</label>
-      <input type="text" class="form-control" name="prenom" value="<?php echo $user->prenom ?>">
+      <input type="text" class="form-control" name="prenom" value="<?php echo $user->prenom ?>" required>
     </div>
     <div class="form-group">
       <label for="email">Email:</label>
@@ -44,19 +44,19 @@ include_once($_SERVER['DOCUMENT_ROOT'] . '/Location/include.php');
     </div>
     <div class="form-group">
       <label for="tel">Tel:</label>
-      <input type="text" class="form-control" name="tel" value="0<?php echo $user->tel ?>">
+      <input type="text" class="form-control" name="tel" value="0<?php echo $user->tel ?>" required>
     </div>
     <div class="form-group">
       <label for="adresse">Adresse:</label>
-      <input type="text" class="form-control" name="adresse" value="<?php echo $user->adresse ?>">
+      <input type="text" class="form-control" name="adresse" value="<?php echo $user->adresse ?>" required>
     </div>
     <div class="form-group">
       <label for="ville">Ville:</label>
-      <input type="text" class="form-control" name="ville" value="<?php echo $user->ville ?>">
+      <input type="text" class="form-control" name="ville" value="<?php echo $user->ville ?>" required>
     </div>
     <div class="form-group">
       <label for="cp">Code postal:</label>
-      <input type="text" class="form-control" name="cp" value="<?php echo $user->cp ?>">
+      <input type="text" class="form-control" name="cp" value="<?php echo $user->cp ?>" required>
     </div>
     <?php 
     if (isset($_POST['user'])) {

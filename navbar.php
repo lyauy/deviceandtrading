@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md bg-white navbar-white">
     <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
-      <a class="navbar-nav mx-auto nav-link" href="http://localhost/Location/Accueil.php">D&T</a>
+      <a class="navbar-nav nav-link" href="http://localhost/Location/Accueil.php" style="font-size: 22.5px; ">D&T</a>
     </div>
     <div class="mx-auto order-0">
          <ul class="navbar-nav mr-auto">

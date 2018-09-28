@@ -19,7 +19,7 @@ include_once($_SERVER['DOCUMENT_ROOT'] . '/Location/include.php');
 
 <?php include_once($_SERVER['DOCUMENT_ROOT'] . '/Location/navbar.php') ?>
 
-<div class="container" style="margin-top:100px;">
+<div class="container" style="margin-top:10px;">
 
       <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
             <ol class="carousel-indicators">

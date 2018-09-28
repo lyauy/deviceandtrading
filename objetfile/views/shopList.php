@@ -20,7 +20,7 @@ include_once($_SERVER['DOCUMENT_ROOT'] . '/Location/include.php');
  ?>
 
    <!-- Page Content -->
-    <div class="container" style="margin-top:100px;">
+    <div class="container" style="margin-top:10px;">
 
       <div class="row">
 
