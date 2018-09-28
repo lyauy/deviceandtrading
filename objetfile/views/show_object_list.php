@@ -63,14 +63,14 @@
 						<td><?php echo $objet->prix; ?>€</td>
 						<td>
 							<?php $obj = serialize($objet);
-				            echo"<form method='POST' action='http://localhost/Location/objetfile/actions/ModifObjet.php'>
+				            echo"<form method='POST' action='http://localhost/Location/objetfile/actions/ModifObjet.php?id_objet=$objet->id_objet'>
 					            <input type='hidden' name='obj' value = '$obj'/>
 					            <button type='submit' class='btn btn-outline-warning'><i class='fas fa-exchange-alt'></i> Modifier</button></td>
 				            </form>";?>
 						<td>
 							<?php $obj = serialize($objet);
 				            echo"
-				            <form method='POST' action='http://localhost/Location/objetfile/actions/deleteObjet.php'>
+				            <form method='POST' action='http://localhost/Location/objetfile/actions/deleteObjet.php?id_objet=$objet->id_objet'>
 				                <input type='hidden' name='objet' value = '$obj'/>
 				            	<button class='btn btn-outline-danger' type='submit'><i class='fas fa-trash-alt'></i> Supprimer</button>
 				            </form>";

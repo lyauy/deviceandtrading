@@ -50,6 +50,7 @@ class Objet {
 
 		$req = $conn->prepare("INSERT INTO objet(nom, typeobjet, image, prix, disponibilite, livraison, id_user, commentaire) 
 			VALUES(?, ?, ?, ?, ?, ?, ?, ?)");
+
 		$req->bindParam(1, $this->nom);
 		$req->bindParam(2, $this->typeobjet);
 		$req->bindParam(3, $this->image);
@@ -62,13 +63,6 @@ class Objet {
 		$req->execute();
 
 		redirectObjet();
-	}
-
-	public function objetsaveToDB($conn)
-	{
-		$req = $conn->exec("UPDATE objet SET nom = '$this->nom', typeobjet = '$this->typeobjet', image = '$this->image', prix = '$this->prix', disponibilite = '$this->disponibilite', livraison = '$this->livraison', id_user = '$this->id_user', commentaire = '$this->commentaire' WHERE id_objet = '$this->id_objet'");
-		
-		header("Location: http://localhost/Location/Accueil.php");
 	}
 
 	public function deleteObjet($conn) 

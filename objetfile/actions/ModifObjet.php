@@ -3,16 +3,23 @@
 <?php include_once($_SERVER['DOCUMENT_ROOT'] . '/Location/front/head.php'); ?>
 <body style="height:1500px;background-color: rgb(249, 249, 249);">
 <?php 
-    include_once($_SERVER['DOCUMENT_ROOT'] . '/Location/objetfile/objet.php');
-    include_once($_SERVER['DOCUMENT_ROOT'] . '/Location/userfile/user.php');
+    include_once($_SERVER['DOCUMENT_ROOT'] . '/Location/include.php');
     if(session_id() == '' || !isset($_SESSION)) {
       {
         session_start();
       }
   }
+ $objid = $_GET['id_objet'];
+ var_dump($objid);
+ $req = $conn->query("SELECT * FROM objet");
+ $objets = getObjet($req);
 
- $objetSelect = unserialize($_POST['obj']);
- var_dump($objetSelect);
+ foreach ($objets as $objet){
+  if($objet->id_objet == $objid)
+      $objetSelect = $objet;
+ }
+/* $objetSelect = unserialize($_POST['obj']);
+ var_dump($objetSelect);*/
  include_once($_SERVER['DOCUMENT_ROOT'] . '/Location/navbar.php') 
  ?>
 
