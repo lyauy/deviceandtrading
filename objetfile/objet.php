@@ -45,8 +45,22 @@ class Objet {
 
 	public function objetToDB($conn)
 	{
-		$req = $conn->exec("INSERT INTO objet(nom, typeobjet, image, prix, disponibilite, livraison, id_user, commentaire) 
-			VALUES('$this->nom', '$this->typeobjet', '$this->image', '$this->prix', '$this->disponibilite', '$this->livraison', '$this->id_user', '$this->commentaire')");
+		/*$req = $conn->exec("INSERT INTO objet(nom, typeobjet, image, prix, disponibilite, livraison, id_user, commentaire) 
+			VALUES('$this->nom', '$this->typeobjet', '$this->image', '$this->prix', '$this->disponibilite', '$this->livraison', '$this->id_user', '$this->commentaire')");*/
+
+		$req = $conn->prepare("INSERT INTO objet(nom, typeobjet, image, prix, disponibilite, livraison, id_user, commentaire) 
+			VALUES(?, ?, ?, ?, ?, ?, ?, ?)");
+		$req->bindParam(1, $this->nom);
+		$req->bindParam(2, $this->typeobjet);
+		$req->bindParam(3, $this->image);
+		$req->bindParam(4, $this->prix);
+		$req->bindParam(5, $this->disponibilite);
+		$req->bindParam(6, $this->livraison);
+		$req->bindParam(7, $this->id_user);
+		$req->bindParam(8, $this->commentaire);
+
+		$req->execute();
+
 		redirectObjet();
 	}
 

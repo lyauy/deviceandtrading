@@ -74,10 +74,18 @@ CREATE TABLE IF NOT EXISTS `user` (
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 
 
-INSERT INTO user (id, pseudo, nom, prenom, email, tel, adresse, ville, cp, admin, password) VALUES (NULL, 'idone', 'idone', 'valeur 2', 'ugo.perniceni@hotmail.fr', 0612986774, 'valeur 2', 'valeur 2', 95750, 0, 'azertyuiop');
-INSERT INTO user (id, pseudo, nom, prenom, email, tel, adresse, ville, cp, admin, password) VALUES (NULL, 'iddeux', 'iddeux', 'valeur 2', 'a@hotmail.fr', 0612986774, 'valeur 2', 'valeur 2', 95750, 0, 'azertyuiop');
-INSERT INTO user (id, pseudo, nom, prenom, email, tel, adresse, ville, cp, admin, password) VALUES (NULL, 'feza', 'valeur 2', 'valeur 2', 'evqs@hotmail.fr', 0612986774, 'valeur 2', 'valeur 2', 95750, 0, 'gvjhb');
-INSERT INTO user (id, pseudo, nom, prenom, email, tel, adresse, ville, cp, admin, password) VALUES (NULL, 'azef', 'valeur 2', 'valeur 2', 'sgdf@hotmail.fr', 0612986774, 'valeur 2', 'valeur 2', 95750, 0, 'gvjhb');
-INSERT INTO user (id, pseudo, nom, prenom, email, tel, adresse, ville, cp, admin, password) VALUES (NULL, 'vqvs', 'valeur 2', 'valeur 2', 'dso@hotmail.fr', 0612986774, 'valeur 2', 'valeur 2', 95750, 0, 'gvjhb');
-INSERT INTO user (id, pseudo, nom, prenom, email, tel, adresse, ville, cp, admin, password) VALUES (NULL, 'dosqk', 'valeur 2', 'valeur 2', 'ejzi@hotmail.fr', 0612986774, 'valeur 2', 'valeur 2', 95750, 0, 'gvjhb');
+INSERT INTO user (id, pseudo, nom, prenom, email, tel, adresse, ville, cp, admin, password) VALUES (NULL, 'Cyadenz', 'Perniceni', 'Ugo', 'ugo.perniceni@hotmail.fr', 0612986774, '15 rue du test', 'Paris', 75001, 1, 'azertyuiop');
+INSERT INTO user (id, pseudo, nom, prenom, email, tel, adresse, ville, cp, admin, password) VALUES (NULL, 'Hexort', 'Yauy', 'Thibaut', 'hexort@gmail.com', 0612986774, '20 rue du goerg', 'Paris', 75005, 1, 'azertyuiop');
+INSERT INTO user (id, pseudo, nom, prenom, email, tel, adresse, ville, cp, admin, password) VALUES (NULL, 'test', 'Bendaoud', 'Jawad', 'test@gmail.com', 0612986774, '1 rue de paris', 'Paris', 75004, 0, 'azertyuiop');
 
+/*INSERT INTO objet (id, nom, typeobjet, email, tel, adresse, ville, cp, admin, password) VALUES (NULL, 'Portable Asus ROG G752V SSD 1256 Go GTX 1070', 'pc_portable', '', 'ugo.perniceni@hotmail.fr', 0612986774, 'valeur 2', 'valeur 2', 95750, 0, 'azertyuiop');
+INSERT INTO objet (id, nom, typeobjet, email, tel, adresse, ville, cp, admin, password) VALUES (NULL, 'iddeux', 'iddeux', 'valeur 2', 'a@hotmail.fr', 0612986774, 'valeur 2', 'valeur 2', 95750, 0, 'azertyuiop');
+INSERT INTO objet (id, nom, typeobjet, email, tel, adresse, ville, cp, admin, password) VALUES (NULL, 'feza', 'valeur 2', 'valeur 2', 'evqs@hotmail.fr', 0612986774, 'valeur 2', 'valeur 2', 95750, 0, 'gvjhb');
+INSERT INTO objet (id, nom, typeobjet, email, tel, adresse, ville, cp, admin, password) VALUES (NULL, 'azef', 'valeur 2', 'valeur 2', 'sgdf@hotmail.fr', 0612986774, 'valeur 2', 'valeur 2', 95750, 0, 'gvjhb');
+INSERT INTO objet (id, nom, typeobjet, email, tel, adresse, ville, cp, admin, password) VALUES (NULL, 'vqvs', 'valeur 2', 'valeur 2', 'dso@hotmail.fr', 0612986774, 'valeur 2', 'valeur 2', 95750, 0, 'gvjhb');
+INSERT INTO objet (id, nom, typeobjet, email, tel, adresse, ville, cp, admin, password) VALUES (NULL, 'dosqk', 'valeur 2', 'valeur 2', 'ejzi@hotmail.fr', 0612986774, 'valeur 2', 'valeur 2', 95750, 0, 'gvjhb');
+INSERT INTO objet (id, nom, prenom, email, tel, adresse, ville, cp, admin, password) VALUES (NULL, 'idone', 'idone', 'valeur 2', 'ugo.perniceni@hotmail.fr', 0612986774, 'valeur 2', 'valeur 2', 95750, 0, 'azertyuiop');
+INSERT INTO objet (id, nom, prenom, email, tel, adresse, ville, cp, admin, password) VALUES (NULL, 'iddeux', 'iddeux', 'valeur 2', 'a@hotmail.fr', 0612986774, 'valeur 2', 'valeur 2', 95750, 0, 'azertyuiop');
+INSERT INTO objet (id, nom, prenom, email, tel, adresse, ville, cp, admin, password) VALUES (NULL, 'feza', 'valeur 2', 'valeur 2', 'evqs@hotmail.fr', 0612986774, 'valeur 2', 'valeur 2', 95750, 0, 'gvjhb');
+INSERT INTO objet (id, nom, prenom, email, tel, adresse, ville, cp, admin, password) VALUES (NULL, 'azef', 'valeur 2', 'valeur 2', 'sgdf@hotmail.fr', 0612986774, 'valeur 2', 'valeur 2', 95750, 0, 'gvjhb');
+*/

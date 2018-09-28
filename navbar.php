@@ -5,12 +5,12 @@
     <div class="mx-auto order-0">
          <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="http://localhost/Location/objetfile/views/shopList.php">Shop</a>
+                <a class="nav-link" href="http://localhost/Location/objetfile/views/shopList.php">Boutique</a>
             </li>
             <li class="nav-item">
                <?php 
                   if(isset($_SESSION['userCo'])) {
-                    echo "<a href='http://localhost/Location/objetfile/views/create_object_form.php' id='object' class='nav-link'>Louer</a>";
+                    echo "<a href='http://localhost/Location/objetfile/views/create_object_form.php' id='object' class='nav-link'>Prêter</a>";
                   }
                 ?>
             </li>

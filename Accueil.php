@@ -60,8 +60,8 @@ include_once($_SERVER['DOCUMENT_ROOT'] . '/Location/include.php');
             </a>
         </div>
     </div>
-    <br><br><br>
-    <h2 align="center"> Les dernières nouveautés </h2><br><br><br><hr><br><br><br>
+    <br><br><br><hr><br><br><br>
+    <h2 align="center"> Les dernières nouveautés </h2><br><br><br><br>
       <div class="col-lg-9" style="margin-left:12.5%;">
         <div class="row">
         <?php foreach ($objets as $objet) {
@@ -76,12 +76,12 @@ include_once($_SERVER['DOCUMENT_ROOT'] . '/Location/include.php');
                           <h5>$objet->prix € / mois</h5>
                           <hr>";
                           if ($objet->commentaire == '')
-                          echo"<p class='card-text'><em>Aucun commentaire</em></p>
+                          echo"<p class='card-text reducetext'><em>Aucun commentaire</em></p>
                         </div>
                       </div>
                     </div>";
                           else
-                          echo"<p class='card-text'><em>$objet->commentaire</em></p>
+                          echo"<p class='card-text reducetext'><em>$objet->commentaire</em></p>
                         </div>
                       </div>
                     </div>";

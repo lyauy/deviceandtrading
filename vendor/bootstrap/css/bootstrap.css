@@ -4370,12 +4370,13 @@ input[type="button"].btn-block {
 }
 
 .card-subtitle {
+  
   margin-top: -0.375rem;
   margin-bottom: 0;
 }
 
 .card-text:last-child {
-  margin-bottom: 0;
+  display: block;
 }
 
 .card-link:hover {

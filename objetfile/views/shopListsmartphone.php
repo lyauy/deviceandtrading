@@ -70,12 +70,12 @@ include_once($_SERVER['DOCUMENT_ROOT'] . '/Location/include.php');
                       <h5>$objet->prix € / mois</h5>
                       <hr>";
                       if ($objet->commentaire == '')
-                      echo"<p class='card-text'><em>Aucun commentaire</em></p>
+                      echo"<p class='card-text reducetext'><em>Aucun commentaire</em></p>
                     </div>
                   </div>
                 </div>";
                       else
-                      echo"<p class='card-text'><em>$objet->commentaire</em></p>
+                      echo"<p class='card-text reducetext'><em>$objet->commentaire</em></p>
                     </div>
                   </div>
                 </div>";

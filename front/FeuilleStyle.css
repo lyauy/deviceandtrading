@@ -174,3 +174,11 @@ span.psw {
 /*    width: 90%;*/
 /*    height: 100%;*/
 }
+
+.reducetext {
+  width: 215px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-bottom: 0;
+}
